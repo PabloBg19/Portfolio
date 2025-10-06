@@ -1,0 +1,197 @@
+    ç * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #000000 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .page-header {
+            text-align: center;
+            color: rgba(2, 23, 141, 0.555);
+            margin-bottom: 50px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        .page-header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .page-header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-bottom: 30px;
+            padding: 12px 24px;
+            background: rgba(0, 60, 255, 0.411);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            font-weight: 500;
+        }
+
+        .back-button:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateX(-5px);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            animation: slideUp 0.6s ease-out;
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Asegura que la tarjeta ocupe el 100% de la altura disponible */
+        }
+
+        .project-image {
+            width: 100%;
+            height: 500px; /* Altura fija para consistencia */
+            overflow: hidden; /* Evita que la imagen se desborde */
+            display: flex; /* Elimina comportamientos flex innecesarios */
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta la imagen sin distorsión */
+            display: block; /* Elimina espacios innecesarios debajo de la imagen */
+        }
+
+        .project-content {
+            padding: 30px;
+            flex-grow: 1; /* Permite que el contenido crezca y ocupe el espacio restante */
+        }
+
+        @media (max-width: 768px) {
+            .project-image {
+                height: 220px; /* Ajuste para pantallas pequeñas */
+            }
+        }
+
+        .project-title {
+            font-size: 1.8em;
+            color: #333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .project-description {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        .tech-tag {
+            background: #e8f4f8;
+            color: #2196F3;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .github-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 1em;
+        }
+
+        .github-button:hover {
+            background: #000;
+            transform: scale(1.05);
+        }
+
+        .github-icon {
+            width: 22px;
+            height: 22px;
+            fill: white;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h1 {
+                font-size: 2em;
+            }
+
+            .page-header p {
+                font-size: 1em;
+            }
+
+            .project-title {
+                font-size: 1.5em;
+            }
+            .project-image {
+                height: 220px;
+                font-size: 3em;
+            }
+        }
