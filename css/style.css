@@ -1,0 +1,113 @@
+header {
+    text-align: center;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border-bottom: 2px solid #ccc;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+    
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+    
+    color: #333;
+    
+}
+.logo-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+.cards-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+    }
+
+    .card-content h3 {
+      margin: 0 0 10px;
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .card-content p {
+      font-size: 0.95em;
+      color: #555;
+    }
+
+    .card button {
+      display: block;
+      margin: 15px auto;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 8px;
+      background: #007BFF;
+      color: #fff;
+      font-size: 0.9em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .card button:hover {
+      background: #0056b3;
+    }
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.projects{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
