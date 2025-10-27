@@ -1,190 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Python Projects · Pablo Belascoain</title>
-  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Projects - Pablo Belascoain</title>
+    <link rel="stylesheet" href="/css/style-python.css">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
 </head>
 <body>
-  <header class="sub-hero">
     <div class="container">
-      <nav class="site-nav" aria-label="Primary navigation">
-        <a class="site-nav__brand" href="index.html#home">PB</a>
-        <button class="site-nav__toggle" aria-expanded="false" aria-controls="sub-menu" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-        </button>
-        <ul class="site-nav__links" id="sub-menu">
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#experience">Experience</a></li>
-          <li><a href="index.html#projects">Projects</a></li>
-          <li><a href="index.html#skills">Skills</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
-
-      <div class="sub-hero__content">
-        <a class="back-link" href="index.html#projects">Volver al portfolio</a>
-        <h1>Python Playroom</h1>
-        <p>Una colección viva de juegos, herramientas y experimentos construidos con Python. Cada proyecto explora mecánicas, interfaces y experiencias de usuario diferentes, desde la lógica de un arcade hasta la musicalidad de un juego casual.</p>
-        <div class="hero__meta">
-          <div>
-            <span class="hero__meta-label">Rol</span>
-            <span class="hero__meta-value">Game Designer · Full-Stack Developer</span>
-          </div>
-          <div>
-            <span class="hero__meta-label">Tecnologías</span>
-            <span class="hero__meta-value">Python · Pygame · Tkinter · Audio</span>
-          </div>
+        <a href="index.html" class="back-button">← Back to Portfolio</a>
+        
+        <div class="page-header">
+            <h1>Python Development Projects</h1>
+            <p>Interactive games built with Python</p>
         </div>
-      </div>
+
+        <div class="projects-grid">
+            <!-- Project 1: DVD vs VIDEO -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="/img/ChatGPT Image 6 oct 2025, 18_53_20 (2).png" alt="DVD vs VIDEO">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">DVD vs VIDEO</h3>
+                    <p class="project-description">
+                        A 2D arcade game where a bouncing DVD logo challenges your reflexes. Control a paddle to keep the ball in play while avoiding obstacles. Features include dynamic ball physics with increasing speed, randomly placed MP3 obstacles that deflect the ball, a scoring system, pause menu, and background music. The game ends if the ball escapes below the paddle, testing your reaction time and precision.
+                    </p>
+                    <div class="technologies">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pygame</span>
+                        <span class="tech-tag">Physics</span>
+                        <span class="tech-tag">Game Design</span>
+                    </div>
+                    <a href="https://github.com/PabloBelascoain" class="github-button" target="_blank">
+                        <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        View on GitHub
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2: MusicGame (Rock Paper Scissors) -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="/img/unnamed.png" alt="MusicGame - Rock Paper Scissors">
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">MusicGame - Rock Paper Scissors</h3>
+                    <p class="project-description">
+                        A relaxing take on the classic Rock, Paper, Scissors game featuring a beautiful GUI built with Tkinter and PIL. Compete against an AI opponent while enjoying soothing movie soundtracks. The game includes a settings menu to adjust audio preferences, real-time score tracking, round-by-round results, and match statistics. Perfect for unwinding while testing your luck in this timeless game with a modern, polished interface.
+                    </p>
+                    <div class="technologies">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Tkinter</span>
+                        <span class="tech-tag">Pygame Audio</span>
+                        <span class="tech-tag">PIL</span>
+                        <span class="tech-tag">GUI Design</span>
+                    </div>
+                    <a href="https://github.com/PabloBelascoain" class="github-button" target="_blank">
+                        <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                        In Process...
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
-
-  <main>
-    <section class="project-gallery">
-      <div class="container">
-        <div class="section__header">
-          <p class="section__eyebrow">Colección</p>
-          <h2 class="section__title">Experimentos interactivos con foco en narrativa visual y sonido</h2>
-        </div>
-        <div class="project-gallery__grid">
-          <article class="project-case">
-            <div class="project-case__header">
-              <h3 class="project-case__title">DVD vs VIDEO</h3>
-              <div class="project-case__meta">
-                <span>Arcade 2D</span>
-                <span>2025</span>
-              </div>
-            </div>
-            <div class="project-case__media">
-              <img src="/img/ChatGPT Image 6 oct 2025, 18_53_20 (2).png" alt="Captura del juego DVD vs VIDEO">
-            </div>
-            <div class="project-case__body">
-              <p>Un arcade frenético inspirado en los salvapantallas clásicos. Controla la barra y mantén el logo en movimiento mientras sortea obstáculos dinámicos. La velocidad y la dificultad escalan a medida que superas niveles, integrando física personalizada y efectos de sonido reactivos.</p>
-              <ul class="tags">
-                <li>Python</li>
-                <li>Pygame</li>
-                <li>Game Loop</li>
-                <li>Sound FX</li>
-              </ul>
-              <div class="case-tags">
-                <span>Motor físico propio</span>
-                <span>UI dinámica</span>
-                <span>Gestión de partículas</span>
-              </div>
-            </div>
-            <div class="project-case__actions">
-              <a class="button button--primary" href="https://github.com/PabloBelascoain" target="_blank" rel="noopener">Ver repositorio</a>
-              <a class="button button--ghost" href="https://github.com/PabloBelascoain" target="_blank" rel="noopener">Documentación</a>
-            </div>
-            <div class="case-footer">
-              <strong>Lo que aprendí</strong>
-              <span>Gestión de loops de juego estables, manejo de colisiones precisas y composición de música adaptativa.</span>
-            </div>
-          </article>
-
-          <article class="project-case">
-            <div class="project-case__header">
-              <h3 class="project-case__title">MusicGame · Rock Paper Scissors</h3>
-              <div class="project-case__meta">
-                <span>Casual Game</span>
-                <span>En desarrollo</span>
-              </div>
-            </div>
-            <div class="project-case__media">
-              <img src="/img/unnamed.png" alt="Interfaz del juego MusicGame Rock Paper Scissors">
-            </div>
-            <div class="project-case__body">
-              <p>Una versión contemplativa del clásico juego “Piedra, Papel o Tijera” acompañada de bandas sonoras cinematográficas. La interfaz, creada con Tkinter y PIL, incluye animaciones suaves, control de audio y un panel de estadísticas con historial detallado de partidas.</p>
-              <ul class="tags">
-                <li>Python</li>
-                <li>Tkinter</li>
-                <li>PIL</li>
-                <li>UX Writing</li>
-              </ul>
-              <div class="case-tags">
-                <span>Música ambiental</span>
-                <span>UI accesible</span>
-                <span>Modo relax</span>
-              </div>
-            </div>
-            <div class="project-case__actions">
-              <a class="button button--ghost" href="https://github.com/PabloBelascoain" target="_blank" rel="noopener">Progreso en GitHub</a>
-            </div>
-            <div class="case-footer">
-              <strong>Enfoque actual</strong>
-              <span>Refinamiento de efectos de sonido, sistema de logros y traducción a inglés.</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section--light">
-      <div class="container">
-        <div class="section__header">
-          <p class="section__eyebrow">Insights</p>
-          <h2 class="section__title">Diseño centrado en la experiencia para cada iteración</h2>
-          <p class="section__description">Cada proyecto incorpora documentación clara, tableros de seguimiento y pruebas con usuarios para asegurar que las decisiones de diseño estén sustentadas en datos reales.</p>
-        </div>
-        <div class="services-grid">
-          <article class="service-card">
-            <h3>Diseño de mecánicas</h3>
-            <p>Prototipos rápidos en Figma y Notion para validar flujos de juego antes de escribir código.</p>
-          </article>
-          <article class="service-card">
-            <h3>Motor técnico</h3>
-            <p>Arquitecturas modulares, separación de lógica y renderizado, y pruebas automatizadas para garantizar estabilidad.</p>
-          </article>
-          <article class="service-card">
-            <h3>Experiencia sonora</h3>
-            <p>Selección y masterización de pistas, ajustes de volumen dinámico y diseño de efectos responsivos.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div>
-        <span class="footer__brand">PB</span>
-        <p>© <span id="year"></span> Pablo Belascoain. Construyendo experiencias digitales memorables.</p>
-      </div>
-      <div class="footer__links">
-        <a href="mailto:pbelascoainguerra@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/pablo-belascoain-guerra-4b4b9821b/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/PabloBelascoain" target="_blank" rel="noopener">GitHub</a>
-      </div>
-    </div>
-  </footer>
-
-  <script>
-    const toggle = document.querySelector('.site-nav__toggle');
-    const menu = document.querySelector('.site-nav__links');
-
-    toggle.addEventListener('click', () => {
-      const expanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', !expanded);
-      menu.classList.toggle('is-open');
-      document.body.classList.toggle('nav-open');
-    });
-
-    document.querySelectorAll('.site-nav__links a').forEach(link => {
-      link.addEventListener('click', () => {
-        toggle.setAttribute('aria-expanded', 'false');
-        menu.classList.remove('is-open');
-        document.body.classList.remove('nav-open');
-      });
-    });
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
