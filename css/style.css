@@ -676,6 +676,34 @@ hr {
 .modal-content::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(135deg, #7b2cbf, #5a189a);
 }
+/* === FIX: eliminar el hueco negro debajo de las tarjetas === */
+.skill-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #9d4edd, #7b2cbf, #5a189a);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 0 !important; /* elimina los 2px que creaban el hueco */
+  box-sizing: border-box;
+}
+
+/* Al pasar el ratón, se muestra el brillo morado completo */
+.skill-item:hover::before {
+  opacity: 1;
+}
+
+/* Garantiza que el fondo cubra todo sin dejar partes negras */
+.skill-item {
+  background: linear-gradient(145deg, #1e1e22, #16161a) !important;
+  position: relative;
+  overflow: hidden;
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -739,4 +767,5 @@ hr {
   .modal-body {
     padding: 25px;
   }
+  
 }
