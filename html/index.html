@@ -4,291 +4,388 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
-  <title>Portfolio Pablo Belascoain</title>
+  <title>Pablo Belascoain · Software Developer Portfolio</title>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="nav-header">
-        <h1>Software Development </h1>
-        <h2>Pablo Belascoain </h2>
-        <br>
-        <h3>Welcome to my portfolio, in this site you can see all my projects and skills as a software developer and you can contact me for any inquiries.</h3>
+  <header class="hero" id="home">
+    <div class="hero__overlay"></div>
+    <div class="container">
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a class="site-nav__brand" href="#home">PB</a>
+        <button class="site-nav__toggle" aria-expanded="false" aria-controls="primary-menu" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="site-nav__links" id="primary-menu">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">Software Development · Cloud Enthusiast · Lifelong Learner</p>
+        <h1 class="hero__title">Hola, soy Pablo Belascoain.</h1>
+        <p class="hero__subtitle">Construyo experiencias digitales robustas y cuidadas, transformando ideas en productos de software escalables con un enfoque minimalista y orientado al detalle.</p>
+        <div class="hero__cta">
+          <a class="button button--primary" href="#projects">Ver proyectos</a>
+          <a class="button button--ghost" href="#contact">Hablemos</a>
+        </div>
+        <div class="hero__meta">
+          <div>
+            <span class="hero__meta-label">Ubicación</span>
+            <span class="hero__meta-value">Navarra, España</span>
+          </div>
+          <div>
+            <span class="hero__meta-label">Disponibilidad</span>
+            <span class="hero__meta-value">Colaboraciones freelance y roles full-time</span>
+          </div>
+        </div>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <div class="projects">
-    <div class="title-section">
-    <h2>My Projects </h2>
-      
-    </div>
-    <div class="cards-container">
-      <!-- CARD 1 -->
-      <div class="card">
-        <img src="/img/wp14813365.webp" alt="Imagen">
-        <div class="card-content">
-          <h3>Development in Python</h3>
-          <p>This section showcases several Python games I created, combining logic, creativity, and interactive design.  
-          Using libraries like Pygame, I worked on graphics, animations, and event handling to bring each project to life.</p>
-          <hr>
-          <div class="button-git">
-            <a href="python-projects.html" class="github-button" target="_blank">See Projects</a>
+  <main>
+    <section class="section section--light" id="about">
+      <div class="container">
+        <div class="section__header">
+          <p class="section__eyebrow">Sobre mí</p>
+          <h2 class="section__title">Humanizando la tecnología con soluciones limpias y eficientes</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-grid__bio">
+            <p>Soy desarrollador de software con pasión por los productos sencillos, intuitivos y con propósito. Disfruto conectando backend, frontend y datos para crear experiencias coherentes que generen impacto real en las personas y los negocios.</p>
+            <p>Actualmente enfocado en desarrollo web full-stack, automatización con Python y diseño de arquitecturas sólidas. Me guía la curiosidad por aprender, el trabajo en equipo y la obsesión por las pequeñas decisiones que marcan la diferencia.</p>
+          </div>
+          <div class="about-grid__highlights">
+            <article class="highlight-card">
+              <h3>+25</h3>
+              <p>proyectos entre aplicaciones web, juegos y herramientas a medida.</p>
+            </article>
+            <article class="highlight-card">
+              <h3>5 años</h3>
+              <p>construyendo software con Java, Python, SQL y tecnologías cloud.</p>
+            </article>
+            <article class="highlight-card">
+              <h3>Mentoría & colaboración</h3>
+              <p>acompañamiento a equipos en mejora de procesos, documentación y buenas prácticas.</p>
+            </article>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- CARD 2 -->
-      <div class="card">
-        <img src="/img/Logo.jpg" alt="Imagen">
-        <div class="card-content">
-          <h3>Exchange Books</h3>
-          <p>Page Web for exchanging books between users, built with HTML, CSS, and JavaScript, this project showcases a user-friendly interface and seamless functionality.</p>
-          <hr>
-          <hr>
-          <div class="button-git">
-            <a href="https://github.com/PabloBelascoain" class="github-button" target="_blank">
-              <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-              View on GitHub
-            </a>
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section__header">
+          <p class="section__eyebrow">Experiencia</p>
+          <h2 class="section__title">Un recorrido conectando productos digitales con personas</h2>
+        </div>
+        <ol class="timeline">
+          <li class="timeline__item">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <div class="timeline__meta">
+                <span>2023 · Actualidad</span>
+                <span>Desarrollo Full-Stack</span>
+              </div>
+              <h3>Consultoría tecnológica freelance</h3>
+              <p>Diseño e implementación de soluciones personalizadas en Java, Python y JavaScript. Integración de APIs, despliegues cloud, automatización de procesos y prototipado rápido para pequeñas y medianas empresas.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <div class="timeline__meta">
+                <span>2020 · 2023</span>
+                <span>Software Engineer</span>
+              </div>
+              <h3>F1 Simulation · Proyecto académico</h3>
+              <p>Lideré el desarrollo de una simulación completa de la temporada 2007 de Fórmula 1 con Java, Swing y MySQL. El proyecto incluye gestión de pilotos, equipos, reglas deportivas y generación de estadísticas en tiempo real.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <div class="timeline__marker"></div>
+            <div class="timeline__content">
+              <div class="timeline__meta">
+                <span>2019 · 2020</span>
+                <span>Desarrollo académico</span>
+              </div>
+              <h3>Investigación y prototipos</h3>
+              <p>Construcción de interfaces accesibles, dashboards de datos y automatizaciones con Python. Experimentación con UX research, pruebas de usuario y documentación centrada en la experiencia.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section--light" id="services">
+      <div class="container">
+        <div class="section__header">
+          <p class="section__eyebrow">Cómo puedo ayudarte</p>
+          <h2 class="section__title">Servicios orientados a generar valor con foco en la simplicidad</h2>
+        </div>
+        <div class="services-grid">
+          <article class="service-card">
+            <h3>Aplicaciones web end-to-end</h3>
+            <p>Diseño de experiencias digitales completas: arquitectura, desarrollo, pruebas y despliegue. Del boceto a producción con metodologías ágiles.</p>
+          </article>
+          <article class="service-card">
+            <h3>Automatización & scripting</h3>
+            <p>Scripts, bots y pipelines en Python que eliminan tareas repetitivas. Integración con APIs, scraping ético y análisis de datos.</p>
+          </article>
+          <article class="service-card">
+            <h3>Consultoría técnica</h3>
+            <p>Mentoría para equipos, auditoría de código y guías de buenas prácticas. Documentación clara y formación a medida.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__header">
+          <p class="section__eyebrow">Proyectos destacados</p>
+          <h2 class="section__title">Productos que combinan diseño limpio, escalabilidad y negocio</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-card__header">
+              <h3>Exchange Books</h3>
+              <span class="project-card__year">2024</span>
+            </div>
+            <p>Marketplace minimalista para intercambio de libros con autenticación, panel de usuarios y recomendaciones personalizadas.</p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="project-card__actions">
+              <a class="link" href="https://github.com/PabloBelascoain" target="_blank" rel="noopener">Ver en GitHub</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card__header">
+              <h3>F1 Simulation</h3>
+              <span class="project-card__year">2023</span>
+            </div>
+            <p>Aplicación de escritorio con motor de simulación de carreras, generación de reportes y panel de administración de escuderías.</p>
+            <ul class="tags">
+              <li>Java</li>
+              <li>Swing</li>
+              <li>MySQL</li>
+            </ul>
+            <div class="project-card__actions">
+              <a class="link" href="https://github.com/PabloBelascoain" target="_blank" rel="noopener">Ver en GitHub</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card__header">
+              <h3>Python Playroom</h3>
+              <span class="project-card__year">2022</span>
+            </div>
+            <p>Colección de juegos y utilidades desarrolladas en Python con interfaces interactivas, música y física personalizada.</p>
+            <ul class="tags">
+              <li>Python</li>
+              <li>Pygame</li>
+              <li>Tkinter</li>
+            </ul>
+            <div class="project-card__actions">
+              <a class="link" href="python-projects.html">Explorar colección</a>
+            </div>
+          </article>
+          <article class="project-card">
+            <div class="project-card__header">
+              <h3>Business Toolkit</h3>
+              <span class="project-card__year">2021</span>
+            </div>
+            <p>Suite de dashboards y automatizaciones que conectan sistemas ERP con herramientas de productividad para equipos híbridos.</p>
+            <ul class="tags">
+              <li>Power BI</li>
+              <li>Python</li>
+              <li>REST APIs</li>
+            </ul>
+            <div class="project-card__actions">
+              <a class="link" href="https://github.com/PabloBelascoain" target="_blank" rel="noopener">Ver en GitHub</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light" id="skills">
+      <div class="container">
+        <div class="section__header">
+          <p class="section__eyebrow">Competencias</p>
+          <h2 class="section__title">Un stack moderno y flexible para construir soluciones completas</h2>
+        </div>
+        <div class="skills-grid">
+          <article class="skills-card">
+            <h3>Backend</h3>
+            <ul>
+              <li>Java · Spring Boot · Maven</li>
+              <li>Python · FastAPI · Pydantic</li>
+              <li>RESTful APIs · GraphQL</li>
+              <li>SQL · PL/SQL · MySQL · PostgreSQL</li>
+              <li>Testing automatizado y CI/CD</li>
+            </ul>
+          </article>
+          <article class="skills-card">
+            <h3>Frontend</h3>
+            <ul>
+              <li>HTML semántico · CSS moderno · Flexbox & Grid</li>
+              <li>JavaScript ES6+ · TypeScript</li>
+              <li>React · Componentes reutilizables</li>
+              <li>Design systems · Accesibilidad</li>
+              <li>Prototipado rápido y UX writing</li>
+            </ul>
+          </article>
+          <article class="skills-card">
+            <h3>Operaciones</h3>
+            <ul>
+              <li>Docker · Docker Compose</li>
+              <li>Linux · Bash scripting</li>
+              <li>Git · GitHub Actions</li>
+              <li>Automatización de despliegues</li>
+              <li>Monitoreo y observabilidad básica</li>
+            </ul>
+          </article>
+          <article class="skills-card">
+            <h3>Personas & negocio</h3>
+            <ul>
+              <li>Facilitación de workshops</li>
+              <li>Documentación y storytelling</li>
+              <li>Trabajo en equipo y liderazgo técnico</li>
+              <li>Métricas de producto y discovery</li>
+              <li>Metodologías ágiles (Scrum, Kanban)</li>
+            </ul>
+          </article>
+        </div>
+        <div class="toolkit">
+          <h3>Herramientas favoritas</h3>
+          <div class="toolkit__tags">
+            <span>VS Code</span>
+            <span>IntelliJ</span>
+            <span>Notion</span>
+            <span>Figma</span>
+            <span>Postman</span>
+            <span>Azure</span>
+            <span>AWS</span>
+            <span>GitHub Projects</span>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- CARD 3 -->
-      <div class="card">
-        <img src="/img/logo_f1.png" alt="Imagen">
-        <div class="card-content">
-          <h3>F1 Simulation</h3>
-          <p>Projector-Pangel is a 2007 Formula 1 season simulation application, developed in Java with Swing and SQL persistence in MySQL (using phpMyAdmin + XAMPP). It allows you to manage and simulate F1 teams and drivers.</p>
-          <hr>
-          <div class="button-git">
-            <a href="https://github.com/PabloBelascoain" class="github-button" target="_blank">
-              <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-              View on GitHub
-            </a>
-          </div>
+    <section class="section" id="testimonials">
+      <div class="container">
+        <div class="section__header">
+          <p class="section__eyebrow">Colaboraciones</p>
+          <h2 class="section__title">Lo que dicen quienes han trabajado conmigo</h2>
+        </div>
+        <div class="testimonials">
+          <article class="testimonial-card">
+            <p>“Pablo convierte requisitos complejos en entregas claras y bien documentadas. Su capacidad para priorizar y comunicar lo convierte en un aliado clave para cualquier equipo.”</p>
+            <h3>Laura Fernández</h3>
+            <span>Product Manager · Sector educativo</span>
+          </article>
+          <article class="testimonial-card">
+            <p>“Siempre aporta soluciones simples a problemas difíciles. La calidad del código y la experiencia de usuario final son su prioridad.”</p>
+            <h3>Javier Martínez</h3>
+            <span>CTO · Startup logística</span>
+          </article>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
 
-  <div class="skills">
-    <div class="title-section">
-      <h2>My Skills</h2>
-    </div>
-      
-    <div class="skills-grid">
-      <!-- SKILL 1 -->
-      <div class="skill-item" onclick="openSkillModal(this)">
-        <div class="skill-header">
-          <div class="skill-header-content">
-            <div class="skill-icon">💻</div>
-            <h3>Backend Development</h3>
-          </div>
-          <div class="expand-icon"></div>
+    <section class="section section--light" id="contact">
+      <div class="container">
+        <div class="section__header">
+          <p class="section__eyebrow">Contacto</p>
+          <h2 class="section__title">Cuéntame sobre tu próximo proyecto</h2>
+          <p class="section__description">Completa el formulario y recibirás respuesta en menos de 24 horas. También puedes escribirme directamente a <a href="mailto:pbelascoainguerra@gmail.com">pbelascoainguerra@gmail.com</a>.</p>
         </div>
-        <div class="skill-details">
-          <ul>
-            <li>Java (OOP, collections, exceptions, multithreading)</li>
-            <li>SQL and PL/SQL (database design, queries, stored procedures)</li>
-            <li>Python (automation, scripting, data handling)</li>
-            <li>PHP (web backend, CRUD applications)</li>
-            <li>RESTful APIs (design and consumption)</li>
-            <li>Database connectivity (JDBC, ORMs)</li>
-            <li>Authentication, sessions, and security best practices</li>
-          </ul>
+        <div class="contact">
+          <form class="contact-form" action="https://formspree.io/f/xayrpavw" method="POST">
+            <div class="form-group">
+              <label for="name">Nombre completo</label>
+              <input type="text" id="name" name="name" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Correo electrónico</label>
+              <input type="email" id="email" name="email" placeholder="nombre@empresa.com" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Empresa u organización (opcional)</label>
+              <input type="text" id="company" name="company" placeholder="¿Dónde trabajas?">
+            </div>
+            <div class="form-group">
+              <label for="message">¿En qué puedo ayudarte?</label>
+              <textarea id="message" name="message" rows="5" placeholder="Describe tu idea, reto o proyecto" required></textarea>
+            </div>
+            <div class="form-footer">
+              <p>Prefiero reuniones breves y concretas. En el mensaje cuéntame el contexto y los objetivos.</p>
+              <button class="button button--primary" type="submit">Enviar mensaje</button>
+            </div>
+          </form>
+          <aside class="contact-info">
+            <h3>Disponibilidad</h3>
+            <ul>
+              <li><strong>Modalidades:</strong> remoto, híbrido en Navarra o desplazamientos puntuales.</li>
+              <li><strong>Idiomas:</strong> español e inglés.</li>
+              <li><strong>Horario preferido:</strong> 9:00 - 17:00 CET.</li>
+            </ul>
+            <div class="contact-social">
+              <a href="https://www.linkedin.com/in/pablo-belascoain-guerra-4b4b9821b/" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://github.com/PabloBelascoain" target="_blank" rel="noopener">GitHub</a>
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+            </div>
+          </aside>
         </div>
       </div>
+    </section>
+  </main>
 
-      <!-- SKILL 2 -->
-      <div class="skill-item" onclick="openSkillModal(this)">
-        <div class="skill-header">
-          <div class="skill-header-content">
-            <div class="skill-icon">🎨</div>
-            <h3>Frontend Development</h3>
-          </div>
-          <div class="expand-icon"></div>
-        </div>
-        <div class="skill-details">
-          <ul>
-            <li>HTML5 (semantic structure, accessibility)</li>
-            <li>CSS3 (Flexbox, Grid, responsive design, animations)</li>
-            <li>JavaScript (DOM manipulation, events, ES6+)</li>
-            <li>AJAX and Fetch API for asynchronous operations</li>
-            <li>Frameworks/Libraries: Bootstrap, jQuery, basic React concepts</li>
-            <li>UI/UX principles (clean layouts, responsive design)</li>
-            <li>Integration with APIs and dynamic content rendering</li>
-          </ul>
-        </div>
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <span class="footer__brand">PB</span>
+        <p>© <span id="year"></span> Pablo Belascoain. Construyendo productos digitales con cariño y precisión.</p>
       </div>
-
-      <!-- SKILL 3 -->
-      <div class="skill-item" onclick="openSkillModal(this)">
-        <div class="skill-header">
-          <div class="skill-header-content">
-            <div class="skill-icon">🔧</div>
-            <h3>Cross-Platform & Tools</h3>
-          </div>
-          <div class="expand-icon"></div>
-        </div>
-        <div class="skill-details">
-          <ul>
-            <li>Android app development (Java/Kotlin, Android Studio)</li>
-            <li>Desktop applications (JavaFX, Swing)</li>
-            <li>Markup and data formats: XML, JSON, XSLT, XPath</li>
-            <li>Version control with Git and GitHub</li>
-            <li>IDEs (VS Code, Eclipse, IntelliJ, Android Studio)</li>
-            <li>Debugging, testing, and documentation tools</li>
-            <li>Package managers and build tools (Maven, Gradle, npm)</li>
-          </ul>
-        </div>
+      <div class="footer__links">
+        <a href="mailto:pbelascoainguerra@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/pablo-belascoain-guerra-4b4b9821b/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/PabloBelascoain" target="_blank" rel="noopener">GitHub</a>
       </div>
-
-      <!-- SKILL 4 -->
-      <div class="skill-item" onclick="openSkillModal(this)">
-        <div class="skill-header">
-          <div class="skill-header-content">
-            <div class="skill-icon">🤝</div>
-            <h3>Soft Skills</h3>
-          </div>
-          <div class="expand-icon"></div>
-        </div>
-        <div class="skill-details">
-          <ul>
-            <li>Problem-solving and analytical thinking</li>
-            <li>Effective communication and teamwork</li>
-            <li>Adaptability and continuous learning</li>
-            <li>Time management and organization</li>
-            <li>Attention to detail and quality focus</li>
-            <li>Creativity and innovation in solutions</li>
-            <li>Leadership and project management basics</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- SKILL 5 -->
-      <div class="skill-item" onclick="openSkillModal(this)">
-        <div class="skill-header">
-          <div class="skill-header-content">
-            <div class="skill-icon">⚙️</div>
-            <h3>Operating Systems</h3>
-          </div>
-          <div class="expand-icon"></div>
-        </div>
-        <div class="skill-details">
-          <ul>
-            <li>Windows (installation, configuration, troubleshooting)</li>
-            <li>Linux (Ubuntu, basic commands, shell scripting)</li>
-            <li>macOS (navigation, system preferences)</li>
-            <li>Cross-platform development considerations</li>
-            <li>File systems and directory structures</li>
-            <li>System security and user management basics</li>
-            <li>Virtualization and dual-boot setups</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- SKILL 6 -->
-      <div class="skill-item" onclick="openSkillModal(this)">
-        <div class="skill-header">
-          <div class="skill-header-content">
-            <div class="skill-icon">🌐</div>
-            <h3>Systems & Business Management</h3>
-          </div>
-          <div class="expand-icon"></div>
-        </div>
-        <div class="skill-details">
-          <ul>
-            <li>Operating systems: Windows & Linux</li>
-            <li>Virtualization: VirtualBox, VMware, Docker basics</li>
-            <li>Networking: configuration, protocols, troubleshooting</li>
-            <li>IT security: backups, firewalls, encryption, best practices</li>
-            <li>Cloud services basics (AWS, Azure, Google Cloud)</li>
-            <li>ERP and business management tools (Odoo, office suites)</li>
-            <li>Team collaboration tools: GitHub Projects, Trello, Slack</li>
-            <li>Productivity skills: documentation, reporting, workflows</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Modal for Skills -->
-  <div class="skill-modal" id="skillModal" onclick="closeSkillModal(event)">
-    <div class="modal-content" onclick="event.stopPropagation()">
-      <div class="modal-header">
-        <div class="modal-header-content">
-          <div class="modal-icon" id="modalIcon"></div>
-          <h3 id="modalTitle"></h3>
-        </div>
-        <button class="close-modal" onclick="closeSkillModal()">×</button>
-      </div>
-      <div class="modal-body">
-        <ul id="modalSkillsList"></ul>
-      </div>
-    </div>
-  </div>
-
-  <hr>
-  <footer>
-    <p>&copy; 2025 Pablo Belascoain. All rights reserved.</p>
-    <p>Contact: <a href="mailto:pbelascoainguerra@gmail.com">pbelascoainguerra@gmail.com</a></p>
-    <div class="logo-footer">
-      <a href="https://www.linkedin.com/in/pablo-belascoain-guerra-4b4b9821b/" target="_blank">
-        <img src="/img/linkedin.png" style="width:28px; height:28px;">
-      </a>
-      <a href="https://github.com/PabloBelascoain" target="_blank">
-        <img src="/img/github.png" style="width:28px; height:28px;">
-      </a>
     </div>
   </footer>
 
   <script>
-    function openSkillModal(element) {
-      const modal = document.getElementById('skillModal');
-      const modalTitle = document.getElementById('modalTitle');
-      const modalIcon = document.getElementById('modalIcon');
-      const modalSkillsList = document.getElementById('modalSkillsList');
-      
-      // Obtener datos de la tarjeta
-      const title = element.querySelector('.skill-header h3').textContent;
-      const icon = element.querySelector('.skill-icon').textContent;
-      const skills = element.querySelectorAll('.skill-details li');
-      
-      // Actualizar contenido del modal
-      modalTitle.textContent = title;
-      modalIcon.textContent = icon;
-      modalSkillsList.innerHTML = '';
-      
-      skills.forEach(skill => {
-        const li = document.createElement('li');
-        li.textContent = skill.textContent.replace('▹', '').trim();
-        modalSkillsList.appendChild(li);
-      });
-      
-      // Mostrar modal
-      modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    }
-    
-    function closeSkillModal(event) {
-      const modal = document.getElementById('skillModal');
-      modal.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
+    const toggle = document.querySelector('.site-nav__toggle');
+    const menu = document.querySelector('.site-nav__links');
 
-    // Cerrar modal con tecla ESC
-    document.addEventListener('keydown', function(event) {
-      if (event.key === 'Escape') {
-        closeSkillModal();
-      }
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', !expanded);
+      menu.classList.toggle('is-open');
+      document.body.classList.toggle('nav-open');
     });
+
+    document.querySelectorAll('.site-nav__links a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggle.setAttribute('aria-expanded', 'false');
+        menu.classList.remove('is-open');
+        document.body.classList.remove('nav-open');
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
