@@ -1,73 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Projects - Pablo Belascoain</title>
-    <link rel="stylesheet" href="/css/style-python.css">
-    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Python Projects - Pablo Belascoain</title>
+  <link rel="stylesheet" href="../css/style-python.css" />
+  <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
 </head>
 <body>
+  <div class="python-page">
+    <div class="python-page-gradient"></div>
+
     <div class="container">
-        <a href="index.html" class="back-button">← Back to Portfolio</a>
-        
-        <div class="page-header">
-            <h1>Python Development Projects</h1>
-            <p>Interactive games built with Python</p>
-        </div>
+      <a href="index.html" class="back-button" rel="noopener noreferrer">← Back to Portfolio</a>
 
+      <header class="page-header">
+        <h1>Python Development Projects</h1>
+        <p>Interactive games and desktop apps built with Python</p>
+      </header>
+
+      <section class="projects-section" aria-label="Python projects">
         <div class="projects-grid">
-            <!-- Project 1: DVD vs VIDEO -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="/img/ChatGPT Image 6 oct 2025, 18_53_20 (2).png" alt="DVD vs VIDEO">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">DVD vs VIDEO</h3>
-                    <p class="project-description">
-                        A 2D arcade game where a bouncing DVD logo challenges your reflexes. Control a paddle to keep the ball in play while avoiding obstacles. Features include dynamic ball physics with increasing speed, randomly placed MP3 obstacles that deflect the ball, a scoring system, pause menu, and background music. The game ends if the ball escapes below the paddle, testing your reaction time and precision.
-                    </p>
-                    <div class="technologies">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pygame</span>
-                        <span class="tech-tag">Physics</span>
-                        <span class="tech-tag">Game Design</span>
-                    </div>
-                    <a href="https://github.com/PabloBelascoain" class="github-button" target="_blank">
-                        <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        View on GitHub
-                    </a>
-                </div>
+          <!-- Project 1: DVD vs VIDEO -->
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="../img/ChatGPT Image 6 oct 2025, 18_53_20 (2).png"
+                alt="DVD vs VIDEO game cover"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
+            <div class="project-content">
+              <h3 class="project-title">DVD vs VIDEO</h3>
+              <p class="project-description">
+                A 2D arcade game where a bouncing DVD logo challenges your reflexes. Control a paddle to keep the ball in play while avoiding obstacles. Features include dynamic ball physics with increasing speed, randomly placed MP3 obstacles that deflect the ball, a scoring system, pause menu, and background music. The game ends if the ball escapes below the paddle, testing your reaction time and precision.
+              </p>
 
-            <!-- Project 2: MusicGame (Rock Paper Scissors) -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="/img/unnamed.png" alt="MusicGame - Rock Paper Scissors">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">MusicGame - Rock Paper Scissors</h3>
-                    <p class="project-description">
-                        A relaxing take on the classic Rock, Paper, Scissors game featuring a beautiful GUI built with Tkinter and PIL. Compete against an AI opponent while enjoying soothing movie soundtracks. The game includes a settings menu to adjust audio preferences, real-time score tracking, round-by-round results, and match statistics. Perfect for unwinding while testing your luck in this timeless game with a modern, polished interface.
-                    </p>
-                    <div class="technologies">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Tkinter</span>
-                        <span class="tech-tag">Pygame Audio</span>
-                        <span class="tech-tag">PIL</span>
-                        <span class="tech-tag">GUI Design</span>
-                    </div>
-                    <a href="https://github.com/PabloBelascoain" class="github-button" target="_blank">
-                        <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                        In Process...
-                    </a>
-                </div>
+              <div class="technologies">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Pygame</span>
+                <span class="tech-tag">Physics</span>
+                <span class="tech-tag">Game Design</span>
+              </div>
+
+              <div class="project-footer">
+                <span class="project-status live">Playable Prototype</span>
+                <a href="https://github.com/PabloBelascoain" class="github-button" target="_blank" rel="noopener noreferrer">
+                  <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>
+                  View on GitHub
+                </a>
+              </div>
             </div>
+          </article>
+
+          <!-- Project 2: MusicGame (Rock Paper Scissors) -->
+          <article class="project-card">
+            <div class="project-image">
+              <img
+                src="../img/unnamed.png"
+                alt="MusicGame Rock Paper Scissors cover"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="project-content">
+              <h3 class="project-title">MusicGame - Rock Paper Scissors</h3>
+              <p class="project-description">
+                A relaxing take on the classic Rock, Paper, Scissors game featuring a GUI built with Tkinter and PIL. Compete against an AI opponent while enjoying movie soundtracks. Includes a settings menu to adjust audio preferences, real-time score tracking, round-by-round results, and match statistics.
+              </p>
+
+              <div class="technologies">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Tkinter</span>
+                <span class="tech-tag">Pygame Audio</span>
+                <span class="tech-tag">PIL</span>
+                <span class="tech-tag">GUI Design</span>
+              </div>
+              <hr>
+              <hr>
+              <hr>
+              <div class="project-footer">
+                <span class="project-status wip">In Progress</span>
+                <a href="https://github.com/PabloBelascoain" class="github-button" target="_blank" rel="noopener noreferrer">
+                  <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                  </svg>
+                  In Process…
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
+      </section>
     </div>
+  </div>
+
+  <script>
+    // Animación de entrada con Intersection Observer
+    (function () {
+      const cards = document.querySelectorAll('.project-card');
+      if (!cards.length) return;
+
+      const prefersReducedMotion = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // IntersectionObserver sólo si está disponible y no se prefiere menos movimiento
+      if ('IntersectionObserver' in window && !prefersReducedMotion) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        cards.forEach((card) => observer.observe(card));
+      } else {
+        // Fallback: muestra las tarjetas sin animación extra
+        cards.forEach((card) => card.classList.add('in-view'));
+      }
+
+      // Efecto "tilt" suave en las tarjetas (solo si no se prefiere menos movimiento)
+      if (!prefersReducedMotion) {
+        cards.forEach((card) => {
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = (e.clientX - rect.left) / rect.width - 0.5;
+            const y = (e.clientY - rect.top) / rect.height - 0.5;
+
+            const rotateX = -y * 7; // ligeramente
+            const rotateY = x * 7;
+
+            card.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+          });
+
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+          });
+        });
+      } else {
+        // Respeta usuarios con prefiere menos movimiento: sin transformaciones JS
+        cards.forEach((card) => {
+          card.style.transform = 'none';
+          card.style.transition = 'none';
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
