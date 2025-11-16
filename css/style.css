@@ -1245,33 +1245,12 @@ header{
     opacity: 0.4;
   }
 }
+
 /* ===== SECCIONES SEPARADAS ===== */
 .page-section {
   position: relative;
   z-index: 1;
 }
-
-/* ===== SCROLL REVEAL ===== */
-[data-reveal] {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-[data-reveal="right"] {
-  transform: translateX(-30px);
-}
-
-[data-reveal="left"] {
-  transform: translateX(30px);
-}
-
-.is-visible {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-
 
 /* ================== FOOTER ================== */
 /* ================== FOOTER NUEVO ================== */
@@ -1478,6 +1457,90 @@ header{
   .contact-form {
     padding:20px 18px 22px;
   }
+
+  /* About Me responsive */
+  .about-me-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-me-content {
+    transform: translateY(20px);
+  }
+  .about-me-wrapper.animate .about-me-content {
+    transform: translateY(0);
+  }
+
+  .about-me-image {
+    transform: translateY(20px);
+  }
+  .about-me-wrapper.animate .about-me-image {
+    transform: translateY(0);
+  }
+
+  /* Skills responsive */
+  .skills-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .skills-tabs {
+    transform: translateY(20px);
+  }
+  .skills-layout.animate .skills-tabs {
+    transform: translateY(0);
+  }
+
+  .skills-panels {
+    transform: translateY(20px);
+  }
+  .skills-layout.animate .skills-panels {
+    transform: translateY(0);
+  }
+
+  /* Title sections responsive */
+  .title-section h2 {
+    font-size: 2.2em;
+  }
+
+  /* CV section responsive */
+  .cv-name {
+    font-size: 1.5rem;
+  }
+
+  .cv-role {
+    font-size: 0.9rem;
+  }
+
+  .cv-summary {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 900px) {
+  /* Tablet responsive */
+  .about-me-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .skills-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .contact-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .nav-header {
+    padding: 18px;
+  }
+
+  .title-section h2 {
+    font-size: 2.5em;
+  }
 }
 
 @media (max-width: 600px) {
@@ -1503,6 +1566,81 @@ header{
 
   .hero-subtitle {
     font-size:0.95em;
+  }
+
+  /* Header responsive */
+  header {
+    padding: 60px 15px 15px;
+  }
+
+  .nav-header {
+    padding: 15px;
+    max-width: 95%;
+  }
+
+  /* Títulos más pequeños en móvil */
+  .title-section h2 {
+    font-size: 1.8em;
+  }
+
+  .title-section {
+    margin-bottom: 30px;
+  }
+
+  /* CV más compacto en móvil */
+  .cv-section {
+    padding: 60px 16px 70px;
+  }
+
+  .cv-card {
+    padding: 22px 18px 20px;
+  }
+
+  .cv-name {
+    font-size: 1.3rem;
+  }
+
+  .cv-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  /* About me highlights más pequeños */
+  .about-me-highlights span {
+    font-size: 0.8em;
+    padding: 6px 12px;
+  }
+
+  /* Skills tabs más compactos */
+  .skills-tab {
+    padding: 10px 12px;
+    font-size: 0.9rem;
+  }
+
+  .skills-tab-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+  }
+
+  /* Skills panel header más compacto */
+  .skills-panel-header {
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .skills-panel-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+
+  .skills-panel-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .skills-panel-short {
+    font-size: 0.85rem;
   }
 }
 
