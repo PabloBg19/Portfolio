@@ -351,6 +351,7 @@ header{
 .card:nth-child(3){animation-delay:.3s}
 .card:nth-child(4){animation-delay:.4s}
 .card:nth-child(5){animation-delay:.5s}
+.card:nth-child(6){animation-delay:.6s}
 
 @keyframes fadeInUpCard{
   to{
@@ -1660,4 +1661,114 @@ header{
 /* Respeta usuarios con menos animación */
 @media (prefers-reduced-motion: reduce){
   *{ animation:none !important; transition:none !important }
+}
+
+/* ================== EXPERIENCE TIMELINE ================== */
+.experience-section {
+  padding: 70px 20px 80px;
+  background: linear-gradient(135deg, #1a1a1d 0%, #141414 100%);
+}
+
+.timeline-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.timeline {
+  position: relative;
+  border-left: 3px solid rgba(157, 78, 221, 0.3);
+  margin-left: 20px;
+  padding-left: 30px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+/* Esta clase se añade por JS al hacer scroll */
+.timeline-item.animate {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -41px; /* Ajuste para que coincida con la línea */
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #9d4edd, #cdb4db);
+  box-shadow: 0 0 10px rgba(157, 78, 221, 0.6);
+  border: 3px solid #141414;
+}
+
+.timeline-content {
+  background: linear-gradient(145deg, #1e1e24, #15151a);
+  border: 1px solid rgba(157, 78, 221, 0.2);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(157, 78, 221, 0.3);
+  border-color: rgba(157, 78, 221, 0.5);
+}
+
+.timeline-content h3 {
+  margin: 0 0 5px;
+  font-size: 1.3rem;
+  color: #f5f5f5;
+}
+
+.timeline-date {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #cdb4db;
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #ddd;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.timeline-content p strong {
+  color: #e4d0ff;
+}
+
+/* Móvil */
+@media (max-width: 600px) {
+  .timeline {
+    margin-left: 10px;
+    padding-left: 20px;
+  }
+  .timeline-dot {
+    left: -31px;
+    width: 16px;
+    height: 16px;
+  }
+  .timeline-content {
+    padding: 18px;
+  }
+  .timeline-content h3 {
+    font-size: 1.15rem;
+  }
 }

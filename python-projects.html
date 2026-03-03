@@ -4,19 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Python Projects - Pablo Belascoain</title>
-  <link rel="stylesheet" href="../css/style-python.css" />
+  <link rel="stylesheet" href="../css/styleProjects.css" />
   <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+  <style>
+    .lang-switcher-sub {
+      position: fixed;
+      top: 16px;
+      right: 20px;
+      display: flex;
+      gap: 4px;
+      z-index: 1000;
+    }
+    .lang-btn {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      border: 1.5px solid rgba(255,255,255,0.3);
+      color: rgba(255,255,255,0.8);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 4px 9px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .lang-btn:hover { background: rgba(255,255,255,0.25); color: #fff; }
+    .lang-btn--active { border-color: #a78bfa; color: #a78bfa; background: rgba(167,139,250,0.15); }
+  </style>
 </head>
 <body>
   <div class="python-page">
     <div class="python-page-gradient"></div>
 
+    <!-- LANGUAGE SWITCHER -->
+    <div class="lang-switcher-sub" role="group" aria-label="Language selector">
+      <button class="lang-btn lang-btn--active" data-lang="en" onclick="switchLang('en')">EN</button>
+      <button class="lang-btn" data-lang="es" onclick="switchLang('es')">ES</button>
+      <button class="lang-btn" data-lang="de" onclick="switchLang('de')">DE</button>
+    </div>
+
     <div class="container">
-      <a href="index.html" class="back-button" rel="noopener noreferrer">← Back to Portfolio</a>
+      <a href="index.html" class="back-button" id="backBtn" rel="noopener noreferrer">← Back to Portfolio</a>
 
       <header class="page-header">
-        <h1>Python Development Projects</h1>
-        <p>Interactive games and desktop apps built with Python</p>
+        <h1 id="pageTitle">Python Development Projects</h1>
+        <p id="pageSubtitle">Interactive games and desktop apps built with Python</p>
       </header>
 
       <section class="projects-section" aria-label="Python projects">
@@ -24,54 +57,41 @@
           <!-- Project 1: DVD vs VIDEO -->
           <article class="project-card">
             <div class="project-image">
-              <img
-                src="../img/ChatGPT Image 6 oct 2025, 18_53_20 (2).png"
-                alt="DVD vs VIDEO game cover"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="../img/ChatGPT Image 6 oct 2025, 18_53_20 (2).png" alt="DVD vs VIDEO game cover" loading="lazy" decoding="async" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">DVD vs VIDEO</h3>
-              <p class="project-description">
+              <h3 class="project-title" data-proj="dvd.title">DVD vs VIDEO</h3>
+              <p class="project-description" data-proj="dvd.desc">
                 A 2D arcade game where a bouncing DVD logo challenges your reflexes. Control a paddle to keep the ball in play while avoiding obstacles. Features include dynamic ball physics with increasing speed, randomly placed MP3 obstacles that deflect the ball, a scoring system, pause menu, and background music. The game ends if the ball escapes below the paddle, testing your reaction time and precision.
               </p>
-
               <div class="technologies">
                 <span class="tech-tag">Python</span>
                 <span class="tech-tag">Pygame</span>
                 <span class="tech-tag">Physics</span>
                 <span class="tech-tag">Game Design</span>
               </div>
-
               <div class="project-footer">
-                <span class="project-status live">Playable Prototype</span>
+                <span class="project-status live" data-proj="status.playable">Playable Prototype</span>
                 <a href="https://github.com/PabloBelascoain" class="github-button" target="_blank" rel="noopener noreferrer">
                   <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                   </svg>
-                  View on GitHub
+                  <span data-proj="btn.github">View on GitHub</span>
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Project 2: MusicGame (Rock Paper Scissors) -->
+          <!-- Project 2: MusicGame -->
           <article class="project-card">
             <div class="project-image">
-              <img
-                src="../img/unnamed.png"
-                alt="MusicGame Rock Paper Scissors cover"
-                loading="lazy"
-                decoding="async"
-              />
+              <img src="../img/unnamed.png" alt="MusicGame Rock Paper Scissors cover" loading="lazy" decoding="async" />
             </div>
             <div class="project-content">
-              <h3 class="project-title">MusicGame - Rock Paper Scissors</h3>
-              <p class="project-description">
+              <h3 class="project-title" data-proj="music.title">MusicGame - Rock Paper Scissors</h3>
+              <p class="project-description" data-proj="music.desc">
                 A relaxing take on the classic Rock, Paper, Scissors game featuring a GUI built with Tkinter and PIL. Compete against an AI opponent while enjoying movie soundtracks. Includes a settings menu to adjust audio preferences, real-time score tracking, round-by-round results, and match statistics.
               </p>
-
               <div class="technologies">
                 <span class="tech-tag">Python</span>
                 <span class="tech-tag">Tkinter</span>
@@ -79,16 +99,14 @@
                 <span class="tech-tag">PIL</span>
                 <span class="tech-tag">GUI Design</span>
               </div>
-              <hr>
-              <hr>
-              <hr>
+              <hr><hr><hr>
               <div class="project-footer">
-                <span class="project-status wip">In Progress</span>
+                <span class="project-status wip" data-proj="status.wip">In Progress</span>
                 <a href="https://github.com/PabloBelascoain" class="github-button" target="_blank" rel="noopener noreferrer">
                   <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                   </svg>
-                  In Process…
+                  <span data-proj="btn.inprogress">In Process…</span>
                 </a>
               </div>
             </div>
@@ -99,57 +117,93 @@
   </div>
 
   <script>
-    // Animación de entrada con Intersection Observer
+    const T = {
+      en: {
+        "back": "← Back to Portfolio",
+        "page.title": "Python Development Projects",
+        "page.subtitle": "Interactive games and desktop apps built with Python",
+        "dvd.title": "DVD vs VIDEO",
+        "dvd.desc": "A 2D arcade game where a bouncing DVD logo challenges your reflexes. Control a paddle to keep the ball in play while avoiding obstacles. Features include dynamic ball physics with increasing speed, randomly placed MP3 obstacles that deflect the ball, a scoring system, pause menu, and background music. The game ends if the ball escapes below the paddle, testing your reaction time and precision.",
+        "music.title": "MusicGame - Rock Paper Scissors",
+        "music.desc": "A relaxing take on the classic Rock, Paper, Scissors game featuring a GUI built with Tkinter and PIL. Compete against an AI opponent while enjoying movie soundtracks. Includes a settings menu to adjust audio preferences, real-time score tracking, round-by-round results, and match statistics.",
+        "status.playable": "Playable Prototype",
+        "status.wip": "In Progress",
+        "btn.github": "View on GitHub",
+        "btn.inprogress": "In Process…"
+      },
+      es: {
+        "back": "← Volver al Portfolio",
+        "page.title": "Proyectos de Desarrollo en Python",
+        "page.subtitle": "Juegos interactivos y aplicaciones de escritorio creados con Python",
+        "dvd.title": "DVD vs VIDEO",
+        "dvd.desc": "Un juego arcade 2D donde un logo de DVD rebotando desafía tus reflejos. Controla una paleta para mantener la pelota en juego mientras evitas obstáculos. Incluye física dinámica con velocidad creciente, obstáculos MP3 colocados aleatoriamente, sistema de puntuación, menú de pausa y música de fondo. El juego termina si la pelota escapa por debajo de la paleta.",
+        "music.title": "MusicGame - Piedra Papel Tijera",
+        "music.desc": "Una versión relajante del clásico Piedra, Papel, Tijera con una GUI creada con Tkinter y PIL. Compite contra una IA mientras disfrutas de bandas sonoras de películas. Incluye menú de configuración de audio, seguimiento de puntuación en tiempo real, resultados por ronda y estadísticas del partido.",
+        "status.playable": "Prototipo Jugable",
+        "status.wip": "En Desarrollo",
+        "btn.github": "Ver en GitHub",
+        "btn.inprogress": "En proceso…"
+      },
+      de: {
+        "back": "← Zurück zum Portfolio",
+        "page.title": "Python-Entwicklungsprojekte",
+        "page.subtitle": "Interaktive Spiele und Desktop-Apps mit Python erstellt",
+        "dvd.title": "DVD vs VIDEO",
+        "dvd.desc": "Ein 2D-Arcade-Spiel, bei dem ein springendes DVD-Logo Ihre Reflexe herausfordert. Steuern Sie ein Paddle, um den Ball im Spiel zu halten und Hindernisse zu vermeiden. Dynamische Ballphysik mit zunehmender Geschwindigkeit, zufällig platzierte MP3-Hindernisse, Punktesystem, Pausemenü und Hintergrundmusik.",
+        "music.title": "MusicGame - Schere Stein Papier",
+        "music.desc": "Eine entspannte Version von Schere, Stein, Papier mit einer GUI aus Tkinter und PIL. Treten Sie gegen eine KI an und genießen Sie Filmmusik. Enthält Audioeinstellungen, Echtzeit-Punktestand, Rundenresultate und Spielstatistiken.",
+        "status.playable": "Spielbarer Prototyp",
+        "status.wip": "In Entwicklung",
+        "btn.github": "Auf GitHub ansehen",
+        "btn.inprogress": "In Bearbeitung…"
+      }
+    };
+
+    let currentLang = 'en';
+
+    function switchLang(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      const t = T[lang];
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('lang-btn--active', btn.dataset.lang === lang);
+      });
+
+      document.getElementById('backBtn').textContent = t['back'];
+      document.getElementById('pageTitle').textContent = t['page.title'];
+      document.getElementById('pageSubtitle').textContent = t['page.subtitle'];
+
+      document.querySelectorAll('[data-proj]').forEach(el => {
+        const key = el.dataset.proj;
+        if (t[key]) el.textContent = t[key];
+      });
+    }
+
+    window.switchLang = switchLang;
+
+    // Card animations
     (function () {
       const cards = document.querySelectorAll('.project-card');
       if (!cards.length) return;
-
-      const prefersReducedMotion = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // IntersectionObserver sólo si está disponible y no se prefiere menos movimiento
+      const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if ('IntersectionObserver' in window && !prefersReducedMotion) {
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add('in-view');
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.2 }
-        );
-
-        cards.forEach((card) => observer.observe(card));
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('in-view'); observer.unobserve(entry.target); } });
+        }, { threshold: 0.2 });
+        cards.forEach(card => observer.observe(card));
       } else {
-        // Fallback: muestra las tarjetas sin animación extra
-        cards.forEach((card) => card.classList.add('in-view'));
+        cards.forEach(card => card.classList.add('in-view'));
       }
-
-      // Efecto "tilt" suave en las tarjetas (solo si no se prefiere menos movimiento)
       if (!prefersReducedMotion) {
-        cards.forEach((card) => {
-          card.addEventListener('mousemove', (e) => {
+        cards.forEach(card => {
+          card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
             const x = (e.clientX - rect.left) / rect.width - 0.5;
             const y = (e.clientY - rect.top) / rect.height - 0.5;
-
-            const rotateX = -y * 7; // ligeramente
-            const rotateY = x * 7;
-
-            card.style.transform = `translateY(-8px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            card.style.transform = `translateY(-8px) rotateX(${-y*7}deg) rotateY(${x*7}deg)`;
           });
-
-          card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-          });
-        });
-      } else {
-        // Respeta usuarios con prefiere menos movimiento: sin transformaciones JS
-        cards.forEach((card) => {
-          card.style.transform = 'none';
-          card.style.transition = 'none';
+          card.addEventListener('mouseleave', () => { card.style.transform = ''; });
         });
       }
     })();

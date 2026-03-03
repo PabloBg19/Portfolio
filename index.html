@@ -6,6 +6,60 @@
   <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
   <link rel="stylesheet" href="../css/style.css" />
   <title>Portfolio Pablo Belascoain</title>
+  <style>
+    /* ===== LANGUAGE SWITCHER ===== */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-left: 12px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      color: rgba(255,255,255,0.7);
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 3px 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+    .lang-btn:hover {
+      border-color: rgba(255,255,255,0.6);
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+    .lang-btn--active {
+      border-color: #cdb4db;
+      color: #cdb4db;
+      background: rgba(205,180,219,0.12);
+    }
+    /* On scrolled navbar, adapt colors */
+    .main-nav.scrolled .lang-btn {
+      border-color: rgba(0,0,0,0.2);
+      color: rgba(0,0,0,0.5);
+    }
+    .main-nav.scrolled .lang-btn:hover {
+      border-color: rgba(0,0,0,0.5);
+      color: rgba(0,0,0,0.8);
+      background: rgba(0,0,0,0.05);
+    }
+    .main-nav.scrolled .lang-btn--active {
+      border-color: #8b5cf6;
+      color: #8b5cf6;
+      background: rgba(139,92,246,0.08);
+    }
+    /* Mobile: show inside nav-links */
+    @media (max-width: 768px) {
+      .lang-switcher {
+        margin: 8px auto 0;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -19,24 +73,32 @@
         </button>
   
         <ul class="nav-links">
-          <li><a href="#top">Top</a></li>
-          <li><a href="#about">About me</a></li>
-          <li><a href="#projects">Project</a></li>
-          <li><a href="#skills-title">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#cv">CV</a></li>
+          <li><a href="#top" data-i18n="nav.top">Top</a></li>
+          <li><a href="#about" data-i18n="nav.about">About me</a></li>
+          <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+          <li><a href="#projects" data-i18n="nav.projects">Project</a></li>
+          <li><a href="#skills-title" data-i18n="nav.skills">Skills</a></li>
+          <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+          <li><a href="#cv" data-i18n="nav.cv">CV</a></li>
         </ul>
+
+        <!-- LANGUAGE SWITCHER -->
+        <div class="lang-switcher" role="group" aria-label="Language selector">
+          <button class="lang-btn lang-btn--active" data-lang="en" onclick="switchLang('en')" aria-label="English">EN</button>
+          <button class="lang-btn" data-lang="es" onclick="switchLang('es')" aria-label="Español">ES</button>
+          <button class="lang-btn" data-lang="de" onclick="switchLang('de')" aria-label="Deutsch">DE</button>
+        </div>
       </div>
     </nav>
   
-    <!-- HERO QUE YA TENÍAS -->
+    <!-- HERO -->
     <div class="nav-header">
       <h1 class="hero-title">
         Pablo Belascoain
       </h1>
   
       <h2 class="hero-typed">
-        I am
+        <span id="hero-iam-label">I am</span>
         <span id="typing-role" class="hero-role"></span>
         <span class="typing-cursor"></span>
       </h2>
@@ -57,17 +119,17 @@
     <div class="about-me-wrapper">
       <div class="about-me-content">
         <p>
-          I’m a Multiplatform Application Development (DAM) student who loves turning ideas
+          I'm a Multiplatform Application Development (DAM) student who loves turning ideas
           into real projects. I spend most of my time experimenting with code: from Python
           games and Java desktop apps to web projects with HTML, CSS and JavaScript.
         </p>
         <p>
-          Through my personal projects I’ve learned how to design, develop and polish
+          Through my personal projects I've learned how to design, develop and polish
           complete applications on my own: planning features, structuring code, working with
           databases and improving the user experience step by step.
         </p>
         <p>
-          I’m especially interested in <strong>full-stack development</strong>,
+          I'm especially interested in <strong>full-stack development</strong>,
           <strong>game development</strong> and <strong>software engineering</strong>.
           My goal is to keep growing as a developer, bring value to real projects and join a
           team where I can learn from others while contributing my own ideas.
@@ -93,6 +155,51 @@
     </div>
   </section>
 
+  <section class="experience-section page-section" id="experience">
+    <div class="title-section">
+      <h2>Experience &amp; Education</h2>
+    </div>
+
+    <div class="timeline-wrapper">
+      <div class="timeline">
+        
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Higher Degree in Multiplatform App Development (DAM)</h3>
+            <span class="timeline-date">Academic Training</span>
+            <p>
+              Comprehensive training in software engineering, focusing on designing, creating, and deploying applications across multiple platforms. I learned core object-oriented programming (Java), database management (SQL), application architecture, and clean code practices.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Internship &amp; Training | OpenWebinars</h3>
+            <span class="timeline-date">Professional Internship</span>
+            <p>
+              Immersive learning experience focused on modern technologies and industry standards. I completed several specialized courses, earning professional certificates that expanded my knowledge in web development, software architecture, and best coding practices.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <h3>Software Developer Intern | Rewoox</h3>
+            <span class="timeline-date">Professional Internship</span>
+            <p>
+              Hands-on role developing immersive experiences and advanced software solutions. I worked extensively with <strong>Unity and C#</strong> to create Virtual Reality (VR) environments, integrated <strong>Artificial Intelligence (AI)</strong> models, and handled database management to support interactive applications.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- PROJECTS -->
   <div class="projects" id="projects">
     <div class="title-section">
@@ -100,16 +207,10 @@
     </div>
 
     <div class="cards-container">
-      <!-- CARD 1 -->
       <div class="cards-container">
         <!-- CARD 1 -->
         <article class="card">
-          <img
-            src="../img/wp14813365.webp"
-            alt="Python projects cover"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src="../img/wp14813365.webp" alt="Python projects cover" loading="lazy" decoding="async" />
           <div class="card-content">
             <h3>Development in Python</h3>
             <p>
@@ -118,21 +219,14 @@
             </p>
             <hr />
             <div class="button-git">
-              <a href="python-projects.html" class="github-button" target="_blank" rel="noopener noreferrer">
-                See Projects
-              </a>
+              <a href="python-projects.html" class="github-button" target="_blank" rel="noopener noreferrer">See Projects</a>
             </div>
           </div>
         </article>
       
         <!-- CARD 2 -->
         <article class="card">
-          <img
-            src="../img/Logo.jpg"
-            alt="Exchange Books logo"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src="../img/Logo.jpg" alt="Exchange Books logo" loading="lazy" decoding="async" />
           <div class="card-content">
             <h3>Exchange Books</h3>
             <p>
@@ -141,12 +235,7 @@
             </p>
             <hr />
             <div class="button-git">
-              <a
-                href="https://github.com/PabloBg19/Exchange-Books.git"
-                class="github-button"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://github.com/PabloBg19/Exchange-Books.git" class="github-button" target="_blank" rel="noopener noreferrer">
                 <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
@@ -158,12 +247,7 @@
       
         <!-- CARD 3 -->
         <article class="card">
-          <img
-            src="../img/logo_f1.png"
-            alt="F1 simulation logo"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src="../img/logo_f1.png" alt="F1 simulation logo" loading="lazy" decoding="async" />
           <div class="card-content">
             <h3>F1 Simulation</h3>
             <p>
@@ -172,12 +256,7 @@
             </p>
             <hr />
             <div class="button-git">
-              <a
-                href="https://github.com/PabloBg19/Proyector-Pangel.git"
-                class="github-button"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://github.com/PabloBg19/Proyector-Pangel.git" class="github-button" target="_blank" rel="noopener noreferrer">
                 <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
@@ -187,14 +266,9 @@
           </div>
         </article>
       
-        <!-- CARD 4 – Snake Evolution -->
+        <!-- CARD 4 -->
         <article class="card">
-          <img
-            src="../img/Snake_evolution.png"
-            alt="Snake Evolution game cover"
-            loading="lazy"
-            decoding="async"
-          />
+          <img src="../img/Snake_evolution.png" alt="Snake Evolution game cover" loading="lazy" decoding="async" />
           <div class="card-content">
             <h3>🐍 Snake Evolution</h3>
             <p>
@@ -205,12 +279,7 @@
             </p>
             <hr />
             <div class="button-git">
-              <a
-                href="https://github.com/PabloBg19/Snake_python.git"
-                class="github-button"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <a href="https://github.com/PabloBg19/Snake_python.git" class="github-button" target="_blank" rel="noopener noreferrer">
                 <svg class="github-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
@@ -219,10 +288,35 @@
             </div>
           </div>
         </article>
-      </div>
+
+        <article class="card">
+          <img src="../img/unity7.png" alt="Unity projects cover" loading="lazy" decoding="async" />
+          <div class="card-content">
+            <h3>Game Dev in Unity</h3>
+            <p>
+              This section showcases my journey into game development using the Unity engine and C#. Explore various 2D and 3D interactive experiences and prototypes.
+            </p>
+            <hr />
+            <div class="button-git">
+              <a href="unity-projects.html" class="github-button" target="_blank" rel="noopener noreferrer">See Projects</a>
+            </div>
+          </div>
+        </article>
       
-        </div>
-      </article>
+        <article class="card">
+          <img src="../img/large.jpg" alt="AI projects cover" loading="lazy" decoding="async" />
+          <div class="card-content">
+            <h3>Artificial Intelligence</h3>
+            <p>
+              A dedicated space for my experiments and projects involving machine learning, neural networks, and AI-driven applications.
+            </p>
+            <hr />
+            <div class="button-git">
+              <a href="ai-projects.html" class="github-button" target="_blank" rel="noopener noreferrer">See Projects</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </div>
   </div>
 
@@ -233,40 +327,33 @@
     </div>
 
     <div class="skills-layout">
-      <!-- TABS IZQUIERDA -->
       <div class="skills-tabs">
         <button class="skills-tab skills-tab--active" data-skill="backend" type="button">
           <span class="skills-tab-icon">💻</span>
           <span class="skills-tab-title">Backend Development</span>
         </button>
-
         <button class="skills-tab" data-skill="frontend" type="button">
           <span class="skills-tab-icon">🎨</span>
           <span class="skills-tab-title">Frontend Development</span>
         </button>
-
         <button class="skills-tab" data-skill="cross" type="button">
           <span class="skills-tab-icon">🔧</span>
           <span class="skills-tab-title">Cross-Platform &amp; Tools</span>
         </button>
-
         <button class="skills-tab" data-skill="soft" type="button">
           <span class="skills-tab-icon">🤝</span>
           <span class="skills-tab-title">Soft Skills</span>
         </button>
-
         <button class="skills-tab" data-skill="os" type="button">
           <span class="skills-tab-icon">⚙️</span>
           <span class="skills-tab-title">Operating Systems</span>
         </button>
-
         <button class="skills-tab" data-skill="biz" type="button">
           <span class="skills-tab-icon">🌐</span>
           <span class="skills-tab-title">Systems &amp; Business</span>
         </button>
       </div>
 
-      <!-- PANELES DERECHA -->
       <div class="skills-panels">
         <!-- BACKEND -->
         <article class="skills-panel skills-panel--active" data-skill="backend">
@@ -274,9 +361,7 @@
             <div class="skills-panel-icon">💻</div>
             <div>
               <h3>Backend Development</h3>
-              <p class="skills-panel-short">
-                Solid foundation in Java, SQL, Python and backend logic for real-world applications.
-              </p>
+              <p class="skills-panel-short">Solid foundation in Java, SQL, Python and backend logic for real-world applications.</p>
             </div>
           </div>
           <ul class="skills-list">
@@ -296,9 +381,7 @@
             <div class="skills-panel-icon">🎨</div>
             <div>
               <h3>Frontend Development</h3>
-              <p class="skills-panel-short">
-                Creating clean, responsive UIs with HTML, CSS and JavaScript.
-              </p>
+              <p class="skills-panel-short">Creating clean, responsive UIs with HTML, CSS and JavaScript.</p>
             </div>
           </div>
           <ul class="skills-list">
@@ -318,9 +401,7 @@
             <div class="skills-panel-icon">🔧</div>
             <div>
               <h3>Cross-Platform &amp; Tools</h3>
-              <p class="skills-panel-short">
-                Experience across desktop, mobile and a wide range of dev tools.
-              </p>
+              <p class="skills-panel-short">Experience across desktop, mobile and a wide range of dev tools.</p>
             </div>
           </div>
           <ul class="skills-list">
@@ -337,12 +418,10 @@
         <!-- SOFT SKILLS -->
         <article class="skills-panel" data-skill="soft">
           <div class="skills-panel-header">
-            <div class="skills-panel-icon">🤝</div>
+            <div class="skills-tab-icon">🤝</div>
             <div>
               <h3>Soft Skills</h3>
-              <p class="skills-panel-short">
-                Not only code: communication, teamwork and mindset for learning.
-              </p>
+              <p class="skills-panel-short">Not only code: communication, teamwork and mindset for learning.</p>
             </div>
           </div>
           <ul class="skills-list">
@@ -362,9 +441,7 @@
             <div class="skills-panel-icon">⚙️</div>
             <div>
               <h3>Operating Systems</h3>
-              <p class="skills-panel-short">
-                Comfortable working across Windows, Linux and macOS environments.
-              </p>
+              <p class="skills-panel-short">Comfortable working across Windows, Linux and macOS environments.</p>
             </div>
           </div>
           <ul class="skills-list">
@@ -384,9 +461,7 @@
             <div class="skills-panel-icon">🌐</div>
             <div>
               <h3>Systems &amp; Business Management</h3>
-              <p class="skills-panel-short">
-                From networking and security to tools for teams and business workflows.
-              </p>
+              <p class="skills-panel-short">From networking and security to tools for teams and business workflows.</p>
             </div>
           </div>
           <ul class="skills-list">
@@ -403,7 +478,6 @@
       </div>
     </div>
   </section>
-  
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
@@ -412,10 +486,9 @@
     </div>
 
     <div class="contact-wrapper">
-      <!-- Texto y enlaces -->
       <div class="contact-info">
         <p>
-          I’m always open to talk about new projects, collaborations or internship
+          I'm always open to talk about new projects, collaborations or internship
           opportunities. If you think I could fit in your team or you just want to
           give me some feedback, feel free to reach out.
         </p>
@@ -430,26 +503,16 @@
           </li>
           <li>
             <span class="contact-icon">💼</span>
-            <a href="https://www.linkedin.com/in/pablo-belascoain-guerra-b82b1832a" target="_blank" rel="noopener noreferrer">
-              LinkedIn Profile
-            </a>
+            <a href="https://www.linkedin.com/in/pablo-belascoain-guerra-b82b1832a" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
           </li>
           <li>
             <span class="contact-icon">💻</span>
-            <a href="https://github.com/PabloBg19" target="_blank" rel="noopener noreferrer">
-              GitHub – PabloBg19
-            </a>
+            <a href="https://github.com/PabloBg19" target="_blank" rel="noopener noreferrer">GitHub – PabloBg19</a>
           </li>
         </ul>
       </div>
 
-      <!-- Formulario que envía email con Formspree -->
-      <form
-        class="contact-form"
-        action="https://formspree.io/f/mrbroqoj"
-        method="POST"
-        id="contactForm"
-      >
+      <form class="contact-form" action="https://formspree.io/f/mrbroqoj" method="POST" id="contactForm">
         <div class="form-row">
           <div class="form-field">
             <label for="name">Name</label>
@@ -473,10 +536,7 @@
 
         <input type="hidden" name="_subject" value="New message from portfolio" />
 
-        <button type="submit" class="contact-button">
-          Send Message
-        </button>
-
+        <button type="submit" class="contact-button">Send Message</button>
         <p class="contact-status" id="contactStatus"></p>
       </form>
     </div>
@@ -507,22 +567,14 @@
           <span>Git &amp; GitHub</span>
         </div>
 
-        <!-- Botón que abre el visor en modal -->
-        <button 
-          type="button" 
-          class="cv-button" 
-          onclick="openCvModal()"
-        >
+        <button type="button" class="cv-button" onclick="openCvModal()">
           <span class="cv-button-icon">📄</span>
           <span>View CV – Inline</span>
         </button>
 
-        <!-- Enlace para abrir en nueva pestaña -->
         <p class="cv-note">
           Or <a href="Cv_PabloBelascoain.pdf" target="_blank" rel="noopener noreferrer">open CV in a new tab</a>.
         </p>
-
-        
       </div>
     </div>
   </section>
@@ -530,355 +582,478 @@
   <hr />
   <hr />
 
-    <!-- CV MODAL VIEWER -->
-    <div id="cvModalBackdrop" class="cv-modal-backdrop">
-      <div class="cv-modal">
-        <div class="cv-modal-header">
-          <div class="cv-modal-title">
-            <span class="cv-modal-icon">📄</span>
-            <span>Curriculum Vitae – Pablo Belascoain</span>
-          </div>
-          <button 
-            type="button" 
-            class="cv-modal-close" 
-            onclick="closeCvModal()" 
-            aria-label="Close CV viewer"
-          >
-            ×
-          </button>
+  <!-- CV MODAL VIEWER -->
+  <div id="cvModalBackdrop" class="cv-modal-backdrop">
+    <div class="cv-modal">
+      <div class="cv-modal-header">
+        <div class="cv-modal-title">
+          <span class="cv-modal-icon">📄</span>
+          <span>Curriculum Vitae – Pablo Belascoain</span>
         </div>
-        <div class="cv-modal-body">
-          <iframe 
-            id="cvFrame" 
-            src="" 
-            frameborder="0" 
-            title="CV – Pablo Belascoain"
-          ></iframe>
-        </div>
+        <button type="button" class="cv-modal-close" onclick="closeCvModal()" aria-label="Close CV viewer">×</button>
       </div>
-    </div>
-
-    
-<footer class="portfolio-footer" id="footer">
-  <div class="footer-inner">
-    <!-- Columna 1: Nombre + descripción -->
-    <div class="footer-column footer-about">
-      <h3 class="footer-name">Pablo Belascoain</h3>
-      <p class="footer-role">Junior Full-Stack Developer · DAM Student</p>
-      <p class="footer-text">
-        I build full-stack applications, games and web projects while studying
-        Multiplatform Application Development. I’m focused on writing clean
-        code, learning fast and contributing to real-world projects.
-      </p>
-
-      <div class="footer-badges">
-        <span class="footer-badge">Open to opportunities</span>
-        <span class="footer-badge">Available for internships</span>
+      <div class="cv-modal-body">
+        <iframe id="cvFrame" src="" frameborder="0" title="CV – Pablo Belascoain"></iframe>
       </div>
-    </div>
-
-    <!-- Columna 2: Enlaces rápidos -->
-    <div class="footer-column">
-      <h4 class="footer-title">Quick Links</h4>
-      <ul class="footer-links">
-        <li><a href="#top">Home</a></li>
-        <li><a href="#about">About me</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills-title">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#cv">CV</a></li>
-      </ul>
-    </div>
-
-    <!-- Columna 3: Contacto -->
-    <div class="footer-column">
-      <h4 class="footer-title">Contact</h4>
-      <ul class="footer-contact">
-        <li>
-          <span>📧</span>
-          <a href="mailto:pbelascoainguerra@gmail.com">
-            pbelascoainguerra@gmail.com
-          </a>
-        </li>
-        <li>
-          <span>📍</span>
-          <span>Spain (Seville area)</span>
-        </li>
-        <li>
-          <span>💼</span>
-          <a href="https://www.linkedin.com/in/pablo-belascoain-guerra-b82b1832a"
-             target="_blank" rel="noopener noreferrer">
-            LinkedIn Profile
-          </a>
-        </li>
-        <li>
-          <span>💻</span>
-          <a href="https://github.com/PabloBg19"
-             target="_blank" rel="noopener noreferrer">
-            GitHub – PabloBg19
-          </a>
-        </li>
-      </ul>
     </div>
   </div>
 
-  <!-- Barra inferior -->
-  <div class="footer-bottom">
-    <p>© 2025 Pablo Belascoain. All rights reserved.</p>
-    <div class="footer-bottom-right">
-      <span>Built with HTML, CSS &amp; JavaScript</span>
-      <a href="#top" class="footer-to-top">Back to top ↑</a>
-    </div>
-  </div>
-</footer>
+  <footer class="portfolio-footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-column footer-about">
+        <h3 class="footer-name">Pablo Belascoain</h3>
+        <p class="footer-role">Junior Full-Stack Developer · DAM Student</p>
+        <p class="footer-text">
+          I build full-stack applications, games and web projects while studying
+          Multiplatform Application Development. I'm focused on writing clean
+          code, learning fast and contributing to real-world projects.
+        </p>
+        <div class="footer-badges">
+          <span class="footer-badge">Open to opportunities</span>
+          <span class="footer-badge">Available for internships</span>
+        </div>
+      </div>
 
+      <div class="footer-column">
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About me</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills-title">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#cv">CV</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4 class="footer-title">Contact</h4>
+        <ul class="footer-contact">
+          <li>
+            <span>📧</span>
+            <a href="mailto:pbelascoainguerra@gmail.com">pbelascoainguerra@gmail.com</a>
+          </li>
+          <li>
+            <span>📍</span>
+            <span>Spain (Seville area)</span>
+          </li>
+          <li>
+            <span>💼</span>
+            <a href="https://www.linkedin.com/in/pablo-belascoain-guerra-b82b1832a" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a>
+          </li>
+          <li>
+            <span>💻</span>
+            <a href="https://github.com/PabloBg19" target="_blank" rel="noopener noreferrer">GitHub – PabloBg19</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Pablo Belascoain. All rights reserved.</p>
+      <div class="footer-bottom-right">
+        <span>Built with HTML, CSS &amp; JavaScript</span>
+        <a href="#top" class="footer-to-top">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
 
   <script>
+  /* ===== TRANSLATIONS ===== */
+  const TRANSLATIONS = {
+    en: {
+      "nav.top":"Top","nav.about":"About me","nav.experience":"Experience","nav.projects":"Project","nav.skills":"Skills","nav.contact":"Contact","nav.cv":"CV",
+      "hero.iam":"I am","hero.subtitle":"Welcome to my portfolio. Here you can explore my projects, skills and the way I grow as a software developer.",
+      "about.title":"About Me",
+      "about.p1":"I'm a Multiplatform Application Development (DAM) student who loves turning ideas into real projects. I spend most of my time experimenting with code: from Python games and Java desktop apps to web projects with HTML, CSS and JavaScript.",
+      "about.p2":"Through my personal projects I've learned how to design, develop and polish complete applications on my own: planning features, structuring code, working with databases and improving the user experience step by step.",
+      "about.p3":"I'm especially interested in <strong>full-stack development</strong>, <strong>game development</strong> and <strong>software engineering</strong>. My goal is to keep growing as a developer, bring value to real projects and join a team where I can learn from others while contributing my own ideas.",
+      "about.h1":"🎮 Own game prototypes in Python & Java","about.h2":"🌐 Web projects with HTML, CSS & JavaScript","about.h3":"🛠️ Focus on clean code, learning and practice",
+      "exp.title":"Experience & Education",
+      "exp.1.title":"Higher Degree in Multiplatform App Development (DAM)","exp.1.date":"Academic Training","exp.1.desc":"Comprehensive training in software engineering, focusing on designing, creating, and deploying applications across multiple platforms. I learned core object-oriented programming (Java), database management (SQL), application architecture, and clean code practices.",
+      "exp.2.title":"Internship & Training | OpenWebinars","exp.2.date":"Professional Internship","exp.2.desc":"Immersive learning experience focused on modern technologies and industry standards. I completed several specialized courses, earning professional certificates that expanded my knowledge in web development, software architecture, and best coding practices.",
+      "exp.3.title":"Software Developer Intern | Rewoox","exp.3.date":"Professional Internship","exp.3.desc":"Hands-on role developing immersive experiences and advanced software solutions. I worked extensively with <strong>Unity and C#</strong> to create Virtual Reality (VR) environments, integrated <strong>Artificial Intelligence (AI)</strong> models, and handled database management to support interactive applications.",
+      "proj.title":"My Projects",
+      "proj.1.title":"Development in Python","proj.1.desc":"This section showcases several Python games I created, combining logic, creativity, and interactive design. Using libraries like Pygame, I worked on graphics, animations, and event handling to bring each project to life.","proj.1.btn":"See Projects",
+      "proj.2.title":"Exchange Books","proj.2.desc":"Web page for exchanging books between users, built with HTML, CSS, and JavaScript. This project showcases a user-friendly interface and seamless functionality.",
+      "proj.3.title":"F1 Simulation","proj.3.desc":"Projector-Pangel is a 2007 Formula 1 season simulation application, developed in Java with Swing and SQL persistence in MySQL (using phpMyAdmin + XAMPP). It allows you to manage and simulate F1 teams and drivers.",
+      "proj.4.title":"🐍 Snake Evolution","proj.4.desc":"Snake Evolution is a modern and challenging version of the classic Snake game, developed in Python with Pygame. It features multiple difficulty levels, dynamic obstacles, sound effects and a persistent high-score system so you can beat your own records.",
+      "proj.5.title":"Game Dev in Unity","proj.5.desc":"This section showcases my journey into game development using the Unity engine and C#. Explore various 2D and 3D interactive experiences and prototypes.","proj.5.btn":"See Projects",
+      "proj.6.title":"Artificial Intelligence","proj.6.desc":"A dedicated space for my experiments and projects involving machine learning, neural networks, and AI-driven applications.","proj.6.btn":"See Projects",
+      "skills.title":"My Skills","skills.tab.backend":"Backend Development","skills.tab.frontend":"Frontend Development","skills.tab.cross":"Cross-Platform & Tools","skills.tab.soft":"Soft Skills","skills.tab.os":"Operating Systems","skills.tab.biz":"Systems & Business",
+      "skills.backend.short":"Solid foundation in Java, SQL, Python and backend logic for real-world applications.",
+      "skills.frontend.short":"Creating clean, responsive UIs with HTML, CSS and JavaScript.",
+      "skills.cross.short":"Experience across desktop, mobile and a wide range of dev tools.",
+      "skills.soft.short":"Not only code: communication, teamwork and mindset for learning.",
+      "skills.os.short":"Comfortable working across Windows, Linux and macOS environments.",
+      "skills.biz.short":"From networking and security to tools for teams and business workflows.",
+      "contact.title":"Contact Me","contact.p1":"I'm always open to talk about new projects, collaborations or internship opportunities. If you think I could fit in your team or you just want to give me some feedback, feel free to reach out.","contact.p2":"You can contact me directly by email or through my professional profiles:",
+      "contact.name.label":"Name","contact.name.placeholder":"Your name","contact.email.label":"Email","contact.email.placeholder":"your@email.com","contact.subject.label":"Subject","contact.subject.placeholder":"How can I help you?","contact.message.label":"Message","contact.message.placeholder":"Write your message here...","contact.btn":"Send Message",
+      "contact.sending":"Sending message...","contact.ok":"Message sent successfully. Thank you!","contact.err":"Something went wrong. Please try again later.","contact.net":"Network error. Please try again.",
+      "cv.title":"Download CV","cv.role":"Software Developer · DAM Student","cv.summary":"Developing my skills through <strong>real projects</strong> while studying a <strong>Multiplatform Application Development</strong> degree. Focused on backend, web development, databases and modern technologies like Java, Python, SQL and JavaScript.",
+      "cv.btn":"View CV – Inline","cv.note":"Or <a href=\"Cv_PabloBelascoain.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">open CV in a new tab</a>.",
+      "cv.modal.title":"Curriculum Vitae – Pablo Belascoain",
+      "footer.role":"Junior Full-Stack Developer · DAM Student","footer.text":"I build full-stack applications, games and web projects while studying Multiplatform Application Development. I'm focused on writing clean code, learning fast and contributing to real-world projects.",
+      "footer.badge1":"Open to opportunities","footer.badge2":"Available for internships","footer.links":"Quick Links","footer.contact":"Contact","footer.location":"Spain (Seville area)",
+      "footer.bottom":"© 2025 Pablo Belascoain. All rights reserved.","footer.built":"Built with HTML, CSS & JavaScript","footer.totop":"Back to top ↑",
+      "footer.home":"Home","footer.about":"About me","footer.projects":"Projects","footer.skills":"Skills","footer.cv":"CV"
+    },
+    es: {
+      "nav.top":"Inicio","nav.about":"Sobre mí","nav.experience":"Experiencia","nav.projects":"Proyectos","nav.skills":"Habilidades","nav.contact":"Contacto","nav.cv":"CV",
+      "hero.iam":"Soy","hero.subtitle":"Bienvenido a mi portafolio. Aquí puedes explorar mis proyectos, habilidades y cómo crezco como desarrollador de software.",
+      "about.title":"Sobre Mí",
+      "about.p1":"Soy estudiante de Desarrollo de Aplicaciones Multiplataforma (DAM) al que le encanta convertir ideas en proyectos reales. Paso la mayor parte del tiempo experimentando con código: desde juegos en Python y aplicaciones de escritorio en Java hasta proyectos web con HTML, CSS y JavaScript.",
+      "about.p2":"A través de mis proyectos personales he aprendido a diseñar, desarrollar y pulir aplicaciones completas por mi cuenta: planificando funcionalidades, estructurando el código, trabajando con bases de datos y mejorando la experiencia de usuario paso a paso.",
+      "about.p3":"Me interesa especialmente el <strong>desarrollo full-stack</strong>, el <strong>desarrollo de videojuegos</strong> y la <strong>ingeniería de software</strong>. Mi objetivo es seguir creciendo como desarrollador, aportar valor en proyectos reales y unirme a un equipo donde pueda aprender de otros mientras contribuyo con mis propias ideas.",
+      "about.h1":"🎮 Prototipos de juegos propios en Python y Java","about.h2":"🌐 Proyectos web con HTML, CSS y JavaScript","about.h3":"🛠️ Enfoque en código limpio, aprendizaje y práctica",
+      "exp.title":"Experiencia y Educación",
+      "exp.1.title":"Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)","exp.1.date":"Formación Académica","exp.1.desc":"Formación integral en ingeniería de software, centrada en el diseño, creación y despliegue de aplicaciones en múltiples plataformas. Aprendí programación orientada a objetos (Java), gestión de bases de datos (SQL), arquitectura de aplicaciones y buenas prácticas de código limpio.",
+      "exp.2.title":"Prácticas y Formación | OpenWebinars","exp.2.date":"Prácticas Profesionales","exp.2.desc":"Experiencia de aprendizaje inmersivo enfocada en tecnologías modernas y estándares de la industria. Completé varios cursos especializados, obteniendo certificados profesionales que ampliaron mis conocimientos en desarrollo web, arquitectura de software y mejores prácticas de programación.",
+      "exp.3.title":"Desarrollador de Software en Prácticas | Rewoox","exp.3.date":"Prácticas Profesionales","exp.3.desc":"Rol práctico desarrollando experiencias inmersivas y soluciones de software avanzadas. Trabajé extensamente con <strong>Unity y C#</strong> para crear entornos de Realidad Virtual (VR), integré modelos de <strong>Inteligencia Artificial (IA)</strong> y gestioné bases de datos para dar soporte a aplicaciones interactivas.",
+      "proj.title":"Mis Proyectos",
+      "proj.1.title":"Desarrollo en Python","proj.1.desc":"Esta sección muestra varios juegos en Python que creé, combinando lógica, creatividad y diseño interactivo. Usando librerías como Pygame, trabajé en gráficos, animaciones y manejo de eventos para dar vida a cada proyecto.","proj.1.btn":"Ver Proyectos",
+      "proj.2.title":"Exchange Books","proj.2.desc":"Página web para intercambiar libros entre usuarios, construida con HTML, CSS y JavaScript. Este proyecto muestra una interfaz intuitiva y una funcionalidad fluida.",
+      "proj.3.title":"Simulación F1","proj.3.desc":"Proyector-Pangel es una aplicación de simulación de la temporada de Fórmula 1 de 2007, desarrollada en Java con Swing y persistencia SQL en MySQL. Permite gestionar y simular equipos y pilotos de F1.",
+      "proj.4.title":"🐍 Snake Evolution","proj.4.desc":"Snake Evolution es una versión moderna y desafiante del clásico juego de la serpiente, desarrollada en Python con Pygame. Incluye múltiples niveles de dificultad, obstáculos dinámicos, efectos de sonido y un sistema de puntuación máxima persistente.",
+      "proj.5.title":"Game Dev en Unity","proj.5.desc":"Esta sección muestra mi trayectoria en el desarrollo de videojuegos usando el motor Unity y C#. Explora varias experiencias interactivas 2D y 3D y prototipos.","proj.5.btn":"Ver Proyectos",
+      "proj.6.title":"Inteligencia Artificial","proj.6.desc":"Un espacio dedicado a mis experimentos y proyectos relacionados con machine learning, redes neuronales y aplicaciones impulsadas por IA.","proj.6.btn":"Ver Proyectos",
+      "skills.title":"Mis Habilidades","skills.tab.backend":"Desarrollo Backend","skills.tab.frontend":"Desarrollo Frontend","skills.tab.cross":"Multiplataforma y Herramientas","skills.tab.soft":"Habilidades Blandas","skills.tab.os":"Sistemas Operativos","skills.tab.biz":"Sistemas y Negocio",
+      "skills.backend.short":"Base sólida en Java, SQL, Python y lógica de backend para aplicaciones reales.",
+      "skills.frontend.short":"Creando interfaces limpias y responsivas con HTML, CSS y JavaScript.",
+      "skills.cross.short":"Experiencia en escritorio, móvil y una amplia gama de herramientas de desarrollo.",
+      "skills.soft.short":"No solo código: comunicación, trabajo en equipo y mentalidad de aprendizaje.",
+      "skills.os.short":"Cómodo trabajando en entornos Windows, Linux y macOS.",
+      "skills.biz.short":"Desde redes y seguridad hasta herramientas para equipos y flujos de trabajo empresariales.",
+      "contact.title":"Contáctame","contact.p1":"Siempre estoy abierto a hablar sobre nuevos proyectos, colaboraciones u oportunidades de prácticas. Si crees que podría encajar en tu equipo o simplemente quieres darme algún feedback, no dudes en contactarme.","contact.p2":"Puedes contactarme directamente por correo electrónico o a través de mis perfiles profesionales:",
+      "contact.name.label":"Nombre","contact.name.placeholder":"Tu nombre","contact.email.label":"Correo","contact.email.placeholder":"tu@correo.com","contact.subject.label":"Asunto","contact.subject.placeholder":"¿En qué puedo ayudarte?","contact.message.label":"Mensaje","contact.message.placeholder":"Escribe tu mensaje aquí...","contact.btn":"Enviar Mensaje",
+      "contact.sending":"Enviando mensaje...","contact.ok":"¡Mensaje enviado con éxito. Gracias!","contact.err":"Algo salió mal. Por favor, inténtalo de nuevo más tarde.","contact.net":"Error de red. Por favor, inténtalo de nuevo.",
+      "cv.title":"Descargar CV","cv.role":"Desarrollador de Software · Estudiante DAM","cv.summary":"Desarrollando mis habilidades a través de <strong>proyectos reales</strong> mientras estudio el grado de <strong>Desarrollo de Aplicaciones Multiplataforma</strong>. Enfocado en backend, desarrollo web, bases de datos y tecnologías modernas como Java, Python, SQL y JavaScript.",
+      "cv.btn":"Ver CV – Integrado","cv.note":"O <a href=\"Cv_PabloBelascoain.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">abrir CV en una nueva pestaña</a>.",
+      "cv.modal.title":"Currículum Vitae – Pablo Belascoain",
+      "footer.role":"Desarrollador Full-Stack Junior · Estudiante DAM","footer.text":"Construyo aplicaciones full-stack, juegos y proyectos web mientras estudio Desarrollo de Aplicaciones Multiplataforma. Me centro en escribir código limpio, aprender rápido y contribuir a proyectos reales.",
+      "footer.badge1":"Abierto a oportunidades","footer.badge2":"Disponible para prácticas","footer.links":"Accesos Rápidos","footer.contact":"Contacto","footer.location":"España (área de Sevilla)",
+      "footer.bottom":"© 2025 Pablo Belascoain. Todos los derechos reservados.","footer.built":"Construido con HTML, CSS y JavaScript","footer.totop":"Volver arriba ↑",
+      "footer.home":"Inicio","footer.about":"Sobre mí","footer.projects":"Proyectos","footer.skills":"Habilidades","footer.cv":"CV"
+    },
+    de: {
+      "nav.top":"Start","nav.about":"Über mich","nav.experience":"Erfahrung","nav.projects":"Projekte","nav.skills":"Fähigkeiten","nav.contact":"Kontakt","nav.cv":"CV",
+      "hero.iam":"Ich bin","hero.subtitle":"Willkommen in meinem Portfolio. Hier können Sie meine Projekte, Fähigkeiten und meinen Weg als Softwareentwickler erkunden.",
+      "about.title":"Über mich",
+      "about.p1":"Ich bin Student der Multiplatform Application Development (DAM) und liebe es, Ideen in echte Projekte umzusetzen. Die meiste Zeit verbringe ich damit, mit Code zu experimentieren: von Python-Spielen und Java-Desktop-Apps bis hin zu Web-Projekten mit HTML, CSS und JavaScript.",
+      "about.p2":"Durch meine persönlichen Projekte habe ich gelernt, wie man vollständige Anwendungen selbstständig entwirft, entwickelt und verfeinert: Funktionen planen, Code strukturieren, mit Datenbanken arbeiten und die Benutzererfahrung Schritt für Schritt verbessern.",
+      "about.p3":"Mein besonderes Interesse gilt der <strong>Full-Stack-Entwicklung</strong>, der <strong>Spieleentwicklung</strong> und der <strong>Software-Entwicklung</strong>. Mein Ziel ist es, als Entwickler zu wachsen, echte Projekte voranzutreiben und einem Team beizutreten, in dem ich von anderen lernen kann.",
+      "about.h1":"🎮 Eigene Spielprototypen in Python und Java","about.h2":"🌐 Web-Projekte mit HTML, CSS und JavaScript","about.h3":"🛠️ Fokus auf sauberen Code, Lernen und Praxis",
+      "exp.title":"Erfahrung & Ausbildung",
+      "exp.1.title":"Höherer Abschluss in Multiplatform App Development (DAM)","exp.1.date":"Akademische Ausbildung","exp.1.desc":"Umfassende Ausbildung in Software-Engineering mit Schwerpunkt auf Entwurf, Entwicklung und Bereitstellung von Anwendungen über mehrere Plattformen. Ich lernte objektorientierte Programmierung (Java), Datenbankmanagement (SQL), Anwendungsarchitektur und saubere Codierungspraktiken.",
+      "exp.2.title":"Praktikum & Training | OpenWebinars","exp.2.date":"Berufspraktikum","exp.2.desc":"Intensives Lernprogramm mit Fokus auf moderne Technologien und Branchenstandards. Ich absolvierte mehrere Spezialkurse und erhielt Zertifikate, die mein Wissen in Webentwicklung, Software-Architektur und Best Practices erweiterten.",
+      "exp.3.title":"Software-Entwickler Praktikant | Rewoox","exp.3.date":"Berufspraktikum","exp.3.desc":"Praktische Tätigkeit bei der Entwicklung immersiver Erlebnisse und fortschrittlicher Softwarelösungen. Ich arbeitete intensiv mit <strong>Unity und C#</strong>, um Virtual-Reality-Umgebungen zu erstellen, integrierte <strong>Künstliche Intelligenz (KI)</strong>-Modelle und verwaltete Datenbanken für interaktive Anwendungen.",
+      "proj.title":"Meine Projekte",
+      "proj.1.title":"Entwicklung in Python","proj.1.desc":"Dieser Bereich zeigt mehrere Python-Spiele, die ich entwickelt habe, und kombiniert Logik, Kreativität und interaktives Design. Mit Bibliotheken wie Pygame arbeitete ich an Grafiken, Animationen und Ereignisbehandlung.","proj.1.btn":"Projekte ansehen",
+      "proj.2.title":"Exchange Books","proj.2.desc":"Webseite zum Tauschen von Büchern zwischen Benutzern, erstellt mit HTML, CSS und JavaScript. Das Projekt zeigt eine benutzerfreundliche Oberfläche und nahtlose Funktionalität.",
+      "proj.3.title":"F1-Simulation","proj.3.desc":"Proyector-Pangel ist eine Simulationsanwendung der Formel-1-Saison 2007, entwickelt in Java mit Swing und SQL-Persistenz in MySQL. Es ermöglicht die Verwaltung und Simulation von F1-Teams und Fahrern.",
+      "proj.4.title":"🐍 Snake Evolution","proj.4.desc":"Snake Evolution ist eine moderne und anspruchsvolle Version des klassischen Schlangenspiels, entwickelt in Python mit Pygame. Es bietet mehrere Schwierigkeitsgrade, dynamische Hindernisse, Soundeffekte und ein persistentes Highscore-System.",
+      "proj.5.title":"Game Dev in Unity","proj.5.desc":"Dieser Bereich zeigt meine Reise in die Spieleentwicklung mit der Unity-Engine und C#. Entdecken Sie verschiedene 2D- und 3D-interaktive Erlebnisse und Prototypen.","proj.5.btn":"Projekte ansehen",
+      "proj.6.title":"Künstliche Intelligenz","proj.6.desc":"Ein dedizierter Bereich für meine Experimente und Projekte im Bereich maschinelles Lernen, neuronale Netze und KI-gesteuerte Anwendungen.","proj.6.btn":"Projekte ansehen",
+      "skills.title":"Meine Fähigkeiten","skills.tab.backend":"Backend-Entwicklung","skills.tab.frontend":"Frontend-Entwicklung","skills.tab.cross":"Multiplattform & Tools","skills.tab.soft":"Soft Skills","skills.tab.os":"Betriebssysteme","skills.tab.biz":"Systeme & Business",
+      "skills.backend.short":"Solide Grundlage in Java, SQL, Python und Backend-Logik für reale Anwendungen.",
+      "skills.frontend.short":"Erstellen sauberer, responsiver Benutzeroberflächen mit HTML, CSS und JavaScript.",
+      "skills.cross.short":"Erfahrung über Desktop, Mobil und eine breite Palette von Entwicklungstools.",
+      "skills.soft.short":"Nicht nur Code: Kommunikation, Teamarbeit und Lernbereitschaft.",
+      "skills.os.short":"Sicher in Windows-, Linux- und macOS-Umgebungen.",
+      "skills.biz.short":"Von Netzwerken und Sicherheit bis hin zu Team- und Business-Workflow-Tools.",
+      "contact.title":"Kontakt","contact.p1":"Ich bin immer offen für Gespräche über neue Projekte, Kooperationen oder Praktikumsmöglichkeiten. Wenn Sie denken, ich könnte in Ihr Team passen, oder Sie mir einfach Feedback geben möchten, zögern Sie nicht, mich zu kontaktieren.","contact.p2":"Sie können mich direkt per E-Mail oder über meine professionellen Profile erreichen:",
+      "contact.name.label":"Name","contact.name.placeholder":"Ihr Name","contact.email.label":"E-Mail","contact.email.placeholder":"ihre@email.de","contact.subject.label":"Betreff","contact.subject.placeholder":"Wie kann ich Ihnen helfen?","contact.message.label":"Nachricht","contact.message.placeholder":"Schreiben Sie hier Ihre Nachricht...","contact.btn":"Nachricht senden",
+      "contact.sending":"Nachricht wird gesendet...","contact.ok":"Nachricht erfolgreich gesendet. Vielen Dank!","contact.err":"Etwas ist schiefgelaufen. Bitte versuchen Sie es später erneut.","contact.net":"Netzwerkfehler. Bitte versuchen Sie es erneut.",
+      "cv.title":"CV herunterladen","cv.role":"Junior-Softwareentwickler · DAM-Student","cv.summary":"Entwickle meine Fähigkeiten durch <strong>echte Projekte</strong> während ich einen Abschluss in <strong>Multiplatform Application Development</strong> studiere. Fokus auf Backend, Webentwicklung, Datenbanken und moderne Technologien wie Java, Python, SQL und JavaScript.",
+      "cv.btn":"CV anzeigen – Integriert","cv.note":"Oder <a href=\"Cv_PabloBelascoain.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">CV in neuem Tab öffnen</a>.",
+      "cv.modal.title":"Lebenslauf – Pablo Belascoain",
+      "footer.role":"Junior Full-Stack-Entwickler · DAM-Student","footer.text":"Ich entwickle Full-Stack-Anwendungen, Spiele und Web-Projekte während des DAM-Studiums. Fokus auf sauberen Code, schnelles Lernen und Beiträge zu realen Projekten.",
+      "footer.badge1":"Offen für Möglichkeiten","footer.badge2":"Verfügbar für Praktika","footer.links":"Schnelllinks","footer.contact":"Kontakt","footer.location":"Spanien (Sevilla-Gebiet)",
+      "footer.bottom":"© 2025 Pablo Belascoain. Alle Rechte vorbehalten.","footer.built":"Erstellt mit HTML, CSS & JavaScript","footer.totop":"Nach oben ↑",
+      "footer.home":"Start","footer.about":"Über mich","footer.projects":"Projekte","footer.skills":"Fähigkeiten","footer.cv":"CV"
+    }
+  };
+
+  const TYPING_ROLES = {
+    en: ['a Full-Stack Developer','a Game Creator','a Software Engineer','a Multiplatform App Developer','a Lifelong Learner','Andaluz'],
+    es: ['Desarrollador Full-Stack','Creador de Juegos','Ingeniero de Software','Desarrollador Multiplataforma','Aprendiz Constante','Andaluz'],
+    de: ['ein Full-Stack-Entwickler','ein Spieleentwickler','ein Software-Ingenieur','ein App-Entwickler','ein lebenslanger Lerner','Andaluz']
+  };
+
+  let currentLang = 'en';
+  let currentTypingRoles = TYPING_ROLES.en;
+  // Stored messages for contact form
+  let _t = TRANSLATIONS.en;
+
+  function switchLang(lang) {
+    if (lang === currentLang) return;
+    currentLang = lang;
+    _t = TRANSLATIONS[lang];
+    currentTypingRoles = TYPING_ROLES[lang];
+
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+
+    // Update lang buttons
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('lang-btn--active', btn.dataset.lang === lang);
+    });
+
+    applyTranslation(lang);
+  }
+
+  function applyTranslation(lang) {
+    const t = TRANSLATIONS[lang];
+
+    // HERO label
+    const iamLabel = document.getElementById('hero-iam-label');
+    if (iamLabel) iamLabel.textContent = t['hero.iam'];
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    if (heroSubtitle) heroSubtitle.textContent = t['hero.subtitle'];
+
+    // NAVBAR links
+    const navLinkEls = document.querySelectorAll('.nav-links li a');
+    const navKeys = ['nav.top','nav.about','nav.experience','nav.projects','nav.skills','nav.contact','nav.cv'];
+    navLinkEls.forEach((a, i) => { if (navKeys[i] && t[navKeys[i]]) a.textContent = t[navKeys[i]]; });
+
+    // ABOUT
+    const aboutH2 = document.querySelector('.about-me .title-section h2');
+    if (aboutH2) aboutH2.textContent = t['about.title'];
+    const aboutPs = document.querySelectorAll('.about-me-content > p');
+    if (aboutPs[0]) aboutPs[0].textContent = t['about.p1'];
+    if (aboutPs[1]) aboutPs[1].textContent = t['about.p2'];
+    if (aboutPs[2]) aboutPs[2].innerHTML = t['about.p3'];
+    const highlights = document.querySelectorAll('.about-me-highlights span');
+    if (highlights[0]) highlights[0].textContent = t['about.h1'];
+    if (highlights[1]) highlights[1].textContent = t['about.h2'];
+    if (highlights[2]) highlights[2].textContent = t['about.h3'];
+
+    // EXPERIENCE
+    const expH2 = document.querySelector('.experience-section .title-section h2');
+    if (expH2) expH2.textContent = t['exp.title'];
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    [['exp.1.title','exp.1.date','exp.1.desc'],['exp.2.title','exp.2.date','exp.2.desc'],['exp.3.title','exp.3.date','exp.3.desc']].forEach(([tk,dk,pk], i) => {
+      if (!timelineItems[i]) return;
+      const h3 = timelineItems[i].querySelector('h3');
+      const date = timelineItems[i].querySelector('.timeline-date');
+      const p = timelineItems[i].querySelector('p');
+      if (h3) h3.textContent = t[tk] || '';
+      if (date) date.textContent = t[dk] || '';
+      if (p) p.innerHTML = t[pk] || '';
+    });
+
+    // PROJECTS
+    const projH2 = document.querySelector('.projects .title-section h2');
+    if (projH2) projH2.textContent = t['proj.title'];
+    const cards = document.querySelectorAll('.projects .card');
+    const projData = [
+      ['proj.1.title','proj.1.desc','proj.1.btn'],['proj.2.title','proj.2.desc',null],
+      ['proj.3.title','proj.3.desc',null],['proj.4.title','proj.4.desc',null],
+      ['proj.5.title','proj.5.desc','proj.5.btn'],['proj.6.title','proj.6.desc','proj.6.btn']
+    ];
+    cards.forEach((card, i) => {
+      if (!projData[i]) return;
+      const [tk,dk,bk] = projData[i];
+      const h3 = card.querySelector('h3');
+      const p = card.querySelector('p');
+      const btn = card.querySelector('.github-button');
+      if (h3 && t[tk]) h3.textContent = t[tk];
+      if (p && t[dk]) p.textContent = t[dk];
+      if (btn && bk && t[bk]) btn.textContent = t[bk];
+    });
+
+    // SKILLS
+    const skillsH2 = document.getElementById('skills-title');
+    if (skillsH2) skillsH2.textContent = t['skills.title'];
+    const tabKeys = ['skills.tab.backend','skills.tab.frontend','skills.tab.cross','skills.tab.soft','skills.tab.os','skills.tab.biz'];
+    document.querySelectorAll('.skills-tab-title').forEach((el, i) => { if (tabKeys[i] && t[tabKeys[i]]) el.textContent = t[tabKeys[i]]; });
+    document.querySelectorAll('.skills-panel h3').forEach((el, i) => { if (tabKeys[i] && t[tabKeys[i]]) el.textContent = t[tabKeys[i]]; });
+    const shortKeys = ['skills.backend.short','skills.frontend.short','skills.cross.short','skills.soft.short','skills.os.short','skills.biz.short'];
+    document.querySelectorAll('.skills-panel-short').forEach((el, i) => { if (shortKeys[i] && t[shortKeys[i]]) el.textContent = t[shortKeys[i]]; });
+
+    // CONTACT
+    const contactH2 = document.querySelector('.contact .title-section h2');
+    if (contactH2) contactH2.textContent = t['contact.title'];
+    const contactPs = document.querySelectorAll('.contact-info > p');
+    if (contactPs[0]) contactPs[0].textContent = t['contact.p1'];
+    if (contactPs[1]) contactPs[1].textContent = t['contact.p2'];
+    const labels = {name:'contact.name.label',email:'contact.email.label',subject:'contact.subject.label',message:'contact.message.label'};
+    Object.entries(labels).forEach(([id, key]) => {
+      const label = document.querySelector(`label[for="${id}"]`);
+      if (label && t[key]) label.textContent = t[key];
+    });
+    const placeholders = {name:'contact.name.placeholder',email:'contact.email.placeholder',subject:'contact.subject.placeholder',message:'contact.message.placeholder'};
+    Object.entries(placeholders).forEach(([id, key]) => {
+      const el = document.getElementById(id);
+      if (el && t[key]) el.placeholder = t[key];
+    });
+    const contactBtn = document.querySelector('.contact-button');
+    if (contactBtn) contactBtn.textContent = t['contact.btn'];
+
+    // CV
+    const cvH2 = document.querySelector('.cv-section .title-section h2');
+    if (cvH2) cvH2.textContent = t['cv.title'];
+    const cvRole = document.querySelector('.cv-role');
+    if (cvRole) cvRole.textContent = t['cv.role'];
+    const cvSummary = document.querySelector('.cv-summary');
+    if (cvSummary) cvSummary.innerHTML = t['cv.summary'];
+    const cvBtnSpan = document.querySelector('.cv-button span:last-child');
+    if (cvBtnSpan) cvBtnSpan.textContent = t['cv.btn'];
+    const cvNote = document.querySelector('.cv-note');
+    if (cvNote) cvNote.innerHTML = t['cv.note'];
+    const cvModalTitle = document.querySelector('.cv-modal-title span:last-child');
+    if (cvModalTitle) cvModalTitle.textContent = t['cv.modal.title'];
+
+    // FOOTER
+    const footerRole = document.querySelector('.footer-role');
+    if (footerRole) footerRole.textContent = t['footer.role'];
+    const footerText = document.querySelector('.footer-text');
+    if (footerText) footerText.textContent = t['footer.text'];
+    const badges = document.querySelectorAll('.footer-badge');
+    if (badges[0]) badges[0].textContent = t['footer.badge1'];
+    if (badges[1]) badges[1].textContent = t['footer.badge2'];
+    const footerTitles = document.querySelectorAll('.footer-title');
+    if (footerTitles[0]) footerTitles[0].textContent = t['footer.links'];
+    if (footerTitles[1]) footerTitles[1].textContent = t['footer.contact'];
+    const footerQuickLinks = document.querySelectorAll('.footer-links li a');
+    ['footer.home','footer.about','footer.projects','footer.skills','footer.contact','footer.cv'].forEach((key, i) => {
+      if (footerQuickLinks[i] && t[key]) footerQuickLinks[i].textContent = t[key];
+    });
+    const locationSpan = document.querySelector('.footer-contact li:nth-child(2) span:last-child');
+    if (locationSpan) locationSpan.textContent = t['footer.location'];
+    const footerBottom = document.querySelector('.footer-bottom p');
+    if (footerBottom) footerBottom.textContent = t['footer.bottom'];
+    const builtSpan = document.querySelector('.footer-bottom-right span');
+    if (builtSpan) builtSpan.textContent = t['footer.built'];
+    const toTop = document.querySelector('.footer-to-top');
+    if (toTop) toTop.textContent = t['footer.totop'];
+  }
+
   /* ===== NAVBAR TOGGLE (MÓVIL) ===== */
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
-
   if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('show');
-      });
-    });
+    navToggle.addEventListener('click', () => navLinks.classList.toggle('show'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('show')));
   }
 
   /* ===== SKILLS TABS ===== */
   const skillTabs = document.querySelectorAll('.skills-tab');
   const skillPanels = document.querySelectorAll('.skills-panel');
-
   if (skillTabs.length && skillPanels.length) {
     skillTabs.forEach(tab => {
       tab.addEventListener('click', () => {
         const target = tab.dataset.skill;
-
-        // activar pestaña
         skillTabs.forEach(t => t.classList.remove('skills-tab--active'));
         tab.classList.add('skills-tab--active');
-
-        // mostrar panel correspondiente
-        skillPanels.forEach(panel => {
-          if (panel.dataset.skill === target) {
-            panel.classList.add('skills-panel--active');
-          } else {
-            panel.classList.remove('skills-panel--active');
-          }
-        });
+        skillPanels.forEach(panel => panel.classList.toggle('skills-panel--active', panel.dataset.skill === target));
       });
     });
   }
 
-  /* ====== TYPING EFFECT (I am ...) ====== */
+  /* ===== TYPING EFFECT ===== */
   document.addEventListener('DOMContentLoaded', function () {
     const roleSpan = document.getElementById('typing-role');
     if (!roleSpan) return;
-
-    const roles = [
-      'a Full-Stack Developer',
-      'a Game Creator',
-      'a Software Engineer',
-      'a Multiplatform App Developer',
-      'a Lifelong Learner',
-      'Andaluz'
-    ];
-
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    const typingSpeed = 90;
-    const deletingSpeed = 60;
-    const pauseBetweenWords = 1100;
+    let roleIndex = 0, charIndex = 0, isDeleting = false;
 
     function type() {
-      const current = roles[roleIndex];
-
+      const roles = currentTypingRoles;
+      const current = roles[roleIndex % roles.length];
       if (!isDeleting) {
         roleSpan.textContent = current.substring(0, charIndex + 1);
         charIndex++;
-
-        if (charIndex === current.length) {
-          isDeleting = true;
-          setTimeout(type, pauseBetweenWords);
-          return;
-        }
+        if (charIndex === current.length) { isDeleting = true; setTimeout(type, 1100); return; }
       } else {
         roleSpan.textContent = current.substring(0, charIndex - 1);
         charIndex--;
-
-        if (charIndex === 0) {
-          isDeleting = false;
-          roleIndex = (roleIndex + 1) % roles.length;
-        }
+        if (charIndex === 0) { isDeleting = false; roleIndex = (roleIndex + 1) % roles.length; }
       }
-
-      setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
+      setTimeout(type, isDeleting ? 60 : 90);
     }
-
     type();
   });
 
-  /* ====== CONTACT FORM (Formspree) ====== */
+  /* ===== CONTACT FORM ===== */
   const contactForm = document.getElementById('contactForm');
   const contactStatus = document.getElementById('contactStatus');
-
   if (contactForm) {
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
-      contactStatus.textContent = 'Sending message...';
+      const t = TRANSLATIONS[currentLang];
+      contactStatus.textContent = t['contact.sending'];
       contactStatus.style.color = '#cdb4db';
-
       try {
-        const response = await fetch(contactForm.action, {
-          method: 'POST',
-          body: new FormData(contactForm),
-          headers: { 'Accept': 'application/json' }
-        });
-
+        const response = await fetch(contactForm.action, { method:'POST', body: new FormData(contactForm), headers:{'Accept':'application/json'} });
         if (response.ok) {
-          contactStatus.textContent = 'Message sent successfully. Thank you!';
+          contactStatus.textContent = t['contact.ok'];
           contactStatus.style.color = '#7df5ac';
           contactForm.reset();
         } else {
-          contactStatus.textContent = 'Something went wrong. Please try again later.';
+          contactStatus.textContent = t['contact.err'];
           contactStatus.style.color = '#ffb3b3';
         }
       } catch (err) {
-        contactStatus.textContent = 'Network error. Please try again.';
+        contactStatus.textContent = t['contact.net'];
         contactStatus.style.color = '#ffb3b3';
       }
     });
   }
 
-  /* ====== CV MODAL VIEWER ====== */
+  /* ===== CV MODAL ===== */
   const cvModalBackdrop = document.getElementById('cvModalBackdrop');
   const cvFrame = document.getElementById('cvFrame');
-
   function openCvModal() {
     if (!cvFrame || !cvModalBackdrop) return;
     cvFrame.src = 'Cv_PabloBelascoain.pdf';
     cvModalBackdrop.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
-
   function closeCvModal() {
     if (!cvFrame || !cvModalBackdrop) return;
     cvModalBackdrop.classList.remove('active');
     cvFrame.src = '';
     document.body.style.overflow = '';
   }
-
-  // Hacer funciones accesibles desde HTML
   window.openCvModal = openCvModal;
   window.closeCvModal = closeCvModal;
+  window.switchLang = switchLang;
+  if (cvModalBackdrop) cvModalBackdrop.addEventListener('click', e => { if (e.target === cvModalBackdrop) closeCvModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && cvModalBackdrop && cvModalBackdrop.classList.contains('active')) closeCvModal(); });
 
-  // Cerrar CV modal al hacer clic fuera
-  if (cvModalBackdrop) {
-    cvModalBackdrop.addEventListener('click', (e) => {
-      if (e.target === cvModalBackdrop) {
-        closeCvModal();
-      }
-    });
-  }
-
-  // Cerrar CV modal con ESC
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && cvModalBackdrop && cvModalBackdrop.classList.contains('active')) {
-      closeCvModal();
-    }
-  });
-
-  /* ====== NAVBAR SCROLL EFFECT ====== */
-  (function initNavbarScroll() {
+  /* ===== NAVBAR SCROLL ===== */
+  (function () {
     const mainNav = document.querySelector('.main-nav');
     if (!mainNav) return;
-
-    function handleScroll() {
-      if (window.scrollY > 50) {
-        mainNav.classList.add('scrolled');
-      } else {
-        mainNav.classList.remove('scrolled');
-      }
-    }
-
-    // Verificar posición inicial
+    function handleScroll() { mainNav.classList.toggle('scrolled', window.scrollY > 50); }
     handleScroll();
-
-    // Escuchar evento de scroll
     window.addEventListener('scroll', handleScroll);
   })();
 
-  /* ====== SCROLL REVEAL ANIMATIONS ====== */
-  (function initScrollReveal() {
+  /* ===== SCROLL REVEAL ===== */
+  (function () {
     function animateElements() {
-      // Respetar preferencias de movimiento reducido
-      const prefersReducedMotion = window.matchMedia && 
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-      // Buscar todos los elementos a animar
-      const elementsToAnimate = [
+      const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const els = [
         ...document.querySelectorAll('.title-section'),
         ...document.querySelectorAll('.about-me-wrapper'),
+        ...document.querySelectorAll('.timeline-item'),
         ...document.querySelectorAll('.cards-container'),
         ...document.querySelectorAll('.skills-layout'),
         ...document.querySelectorAll('.contact-wrapper'),
         ...document.querySelectorAll('.cv-wrapper'),
         ...document.querySelectorAll('.portfolio-footer')
-      ].filter(el => el !== null);
-
-      if (!elementsToAnimate.length) return;
-
-      // Si prefiere menos movimiento, mostrar todo de inmediato
-      if (prefersReducedMotion) {
-        elementsToAnimate.forEach(el => el.classList.add('animate'));
-        return;
-      }
-
-      // Si no hay IntersectionObserver, mostrar todo de inmediato
-      if (!('IntersectionObserver' in window)) {
-        elementsToAnimate.forEach(el => el.classList.add('animate'));
-        return;
-      }
-
-      // Configuración del observer
-      const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      // Crear observer
+      ].filter(Boolean);
+      if (!els.length) return;
+      if (prefersReducedMotion || !('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('animate')); return; }
       const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, observerOptions);
-
-      // Observar todos los elementos
-      elementsToAnimate.forEach(el => observer.observe(el));
+        entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('animate'); observer.unobserve(entry.target); } });
+      }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+      els.forEach(el => observer.observe(el));
     }
-
-    // Esperar a que el DOM esté completamente listo
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(animateElements, 100);
-      });
-    } else {
-      setTimeout(animateElements, 100);
-    }
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', () => setTimeout(animateElements, 100));
+    else setTimeout(animateElements, 100);
   })();
-  
-</script>
-
-
+  </script>
 </body>
 </html>
